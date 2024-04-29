@@ -1,6 +1,6 @@
 # Kaam Do 
 
-![Kaam Do Logo](Kaam-Do/client/src/assets/banner.png)
+![Kaam Do Logo](https://github.com/PatilHarshh/Kaam-Do/blob/main/client/src/assets/banner.png)
 
 Welcome to Kaam Do, your go-to platform for job searching and opportunities!
 
