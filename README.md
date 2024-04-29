@@ -16,6 +16,12 @@ Kaam Do is a web application designed to streamline the job searching process. W
 - **Apply Directly**: Apply to job listings directly through the platform.
 - **Employer Dashboard**: Employers can manage job postings and applications seamlessly.
 
+
+## Get Involved:
+We welcome contributions from new open-source contributors! If you're interested in improving Kaam Do, feel free to fork the repository and submit pull requests with your changes.
+
+## 🌟 Contributions Welcome! 🌟
+
 ## Installation:
 
 To get started with Kaam Do, follow these simple steps:
@@ -26,9 +32,4 @@ To get started with Kaam Do, follow these simple steps:
 2. Change the directory to Client and Install required Packages
   ```bash
    cd client
-   npm i.
-
-
-
-
- 
+   npm i
