@@ -93,18 +93,16 @@ const Footer = () => {
             <p className='text-gray-300 text-sm text-center sm:text-left'>
               &copy; 2023 Job Finder —
               <a
-                href='https://youtube.com/@CodeWaveWithAsante'
+              
                 className='text-[#1199e7] ml-1'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                @CodeWave
+                @Kaam Do
               </a>
             </p>
 
-            <span className='sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-300 text-sm'>
-              Designed by CodeWave
-            </span>
+           
           </div>
         </div>
       </div>
