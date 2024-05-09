@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 import xss from'xss-clean';
 import ExpressMongoSanitize from 'express-mongo-sanitize';
 import dbConnection from './dbConfig/dbConnection.js';
+import  userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -29,6 +30,12 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(morgan("dev"));
 
+
+
+
+// Routes
+
+app.use('/api/users', userRoutes);
 
 // Listen
 app.listen(PORT, ()=>{
