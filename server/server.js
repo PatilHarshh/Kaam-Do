@@ -7,8 +7,9 @@ import bodyParser from 'body-parser';
 import xss from'xss-clean';
 import ExpressMongoSanitize from 'express-mongo-sanitize';
 import dbConnection from './dbConfig/dbConnection.js';
+import JobRouter from './routes/Jobs-Route.js';
 
-dotenv.config();
+dotenv.config({path:"./config.env"});
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(express.json({limit:'10mb'}))
 app.use(express.urlencoded({extended: true}));
 
 app.use(morgan("dev"));
+app.use('/api/v1/jobs',JobRouter);
 
 
 // Listen
