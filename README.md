@@ -10,7 +10,7 @@ Kaam Do is a web application designed to streamline the job searching process. W
 
 ## Features:
 
-- **User Authentication**: Securely log in and manage your profile.
+- **User Authentication**: Securely login and manage your profile.
 - **Job Listings**: Browse through a wide range of job listings.
 - **Filtering Options**: Easily filter jobs based on location, salary, and more.
 - **Apply Directly**: Apply to job listings directly through the platform.
@@ -29,7 +29,7 @@ To get started with Kaam Do, follow these simple steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/kaam-do.git
-2. Change the directory to Client and Install required Packages
+2. Change the directory to Client and Install the required Packages
   ```bash
    cd client
    npm i
