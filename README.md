@@ -25,11 +25,20 @@ We welcome contributions from new open-source contributors! If you're interested
 ## Installation:
 
 To get started with Kaam Do, follow these simple steps:
-
-1. Clone the repository:
+1. Fork this repo
+2. Clone the repository:
    ```bash
    git clone https://github.com/your-username/kaam-do.git
-2. Change the directory to Client and Install required Packages
-  ```bash
+3. Before running, ensure you have Node.js and npm installed on your system.
+### Running the Server
+```bash
+   cd server
+   npm i
+   npm run dev
+```
+### Running the Client
+```bash
    cd client
    npm i
+   npm run dev
+```
