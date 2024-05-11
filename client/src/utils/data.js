@@ -45,6 +45,7 @@ export const jobs = [
     jobTitle: "Software Engineer",
     location: "West US",
     jobType: "Full-Time",
+    experienceRequired: '0-1',
     salary: "1200",
     detail: [
       {
@@ -72,6 +73,7 @@ export const jobs = [
     jobTitle: "System Analyst",
     location: "New York",
     jobType: "Full-Time",
+    experienceRequired: '1-2',
     salary: "1200",
     detail: [
       {
@@ -99,6 +101,7 @@ export const jobs = [
     jobTitle: "Social Meia Manager",
     location: "India, Mumbai",
     jobType: "Full-Time",
+    experienceRequired: '2-6',
     salary: "1200",
     detail: [
       {
@@ -126,6 +129,7 @@ export const jobs = [
     jobTitle: "CFO",
     location: "Norway",
     jobType: "Full-Time",
+    experienceRequired: '6',
     salary: "1200",
     detail: [
       {
@@ -153,6 +157,7 @@ export const jobs = [
     jobTitle: "CFO",
     location: "Norway",
     jobType: "Full-Time",
+    experienceRequired: '6',
     salary: "1200",
     detail: [
       {
@@ -180,6 +185,7 @@ export const jobs = [
     jobTitle: "Product Manager",
     location: "Norway",
     jobType: "Full-Time",
+    experienceRequired: '2-6',
     salary: "1200",
     detail: [
       {
@@ -207,6 +213,7 @@ export const jobs = [
     jobTitle: "Product Manager",
     location: "Norway",
     jobType: "Full-Time",
+    experienceRequired: '1-2',
     salary: "1200",
     detail: [
       {
@@ -234,6 +241,7 @@ export const jobs = [
     jobTitle: "Product Manager",
     location: "Norway",
     jobType: "Full-Time",
+    experienceRequired: '0-1',
     salary: "1200",
     detail: [
       {
@@ -261,6 +269,7 @@ export const jobs = [
     jobTitle: "Subscribe Please",
     location: "Norway",
     jobType: "Full-Time",
+    experienceRequired: '0-1',
     salary: "1200",
     detail: [
       {
