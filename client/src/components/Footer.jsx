@@ -54,10 +54,10 @@ const Footer = () => {
             Subscribe to our Newsletter
           </p>
 
-          <div className='container mx-auto px-5 pt-6 pb-8 flex flex-wrap items-center justify-between '>
+          <div className='container mx-auto px-8 pt-6 pb-8 flex flex-wrap items-center justify-between '>
             <div className='w-full md:w-2/4 lg:w-1/3 h-16 flex items-center justify-center md:justify-start '>
               <TextInput
-                styles='w-full flex-grow md:w-40 2xl:w-64 bg-gray-100 sm:mr-4 md-2'
+                styles='w-full flex-grow md:w-40 2xl:w-72 bg-gray-100 sm:mr-4 md-2'
                 type='email'
                 placeholder='Email Address'
               />
@@ -69,6 +69,9 @@ const Footer = () => {
                 }
               />
             </div>
+           
+
+
 
             <span className='inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto'>
               <a className='text-white text-xl  hover:scale-125 ease-in-out duration-300'>
@@ -93,7 +96,7 @@ const Footer = () => {
             <p className='text-gray-300 text-sm text-center sm:text-left'>
               &copy; 2023 Job Finder —
               <a
-              
+
                 className='text-[#1199e7] ml-1'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -102,7 +105,7 @@ const Footer = () => {
               </a>
             </p>
 
-           
+
           </div>
         </div>
       </div>

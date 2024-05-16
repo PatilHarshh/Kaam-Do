@@ -10,7 +10,7 @@ import {
   CodeWave,
 } from "../assets";
 
-export const jobTypes = ["Full-Time", "Part-Time", "ContracT", "Intern"];
+export const jobTypes = ["Full-Time", "Part-Time", "Contract", "Intern"];
 
 export const experience = [
   { title: "Under 1 Year", value: "0-1" },
@@ -61,7 +61,7 @@ export const jobs = [
   {
     id: "2",
     company: {
-      name: "Google Corporation",
+      name: "Google Inc",
       location: "Califonia",
       email: "support@google.com",
       contact: "support@google",
