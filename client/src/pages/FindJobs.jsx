@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { BsStars } from "react-icons/bs";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdSelectAll } from "react-icons/md";
 
 import Header from "../components/Header";
 import { experience, jobTypes, jobs } from "../utils/data";
@@ -17,24 +17,41 @@ const FindJobs = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [jobLocation, setJobLocation] = useState("");
-  const [filterJobTypes, setFilterJobTypes] = useState([]);
-  const [filterExp, setFilterExp] = useState([]);
+  // const [filterJobTypes, setFilterJobTypes] = useState([]);
+  const filterJobTypes = useRef([]);
+  const filterExp = useRef([]);
 
   const [isFetching, setIsFetching] = useState(false);
+
+  const [allJobs, setJobs] = useState(jobs);
 
   const location = useLocation();
   const navigate = useNavigate();
 
   const filterJobs = (val) => {
-    if (filterJobTypes?.includes(val)) {
-      setFilterJobTypes(filterJobTypes.filter((el) => el != val));
+
+    if(filterJobTypes.current.includes(val)) {
+      filterJobTypes.current.splice(filterJobTypes.current.indexOf(val), 1);
+      if(!filterJobTypes.current.length) {
+        setJobs(jobs);
+      }
     } else {
-      setFilterJobTypes([...filterJobTypes, val]);
+      filterJobTypes.current.push(val);
+      setJobs(() => jobs.filter((job) => filterJobTypes.current.includes(job.jobType)));
     }
   };
 
-  const filterExperience = async (e) => {
-    setFilterExp(e);
+  const filterExperience = (val) => {
+    // setFilterExp(e);
+    if(filterExp.current.includes(val)) {
+      filterExp.current.splice(filterExp.current.indexOf(val), 1);
+      if(!filterExp.current.length) {
+        setJobs(jobs);
+      }
+    } else {
+      filterExp.current.push(val);
+      setJobs(() => jobs.filter((job) => filterExp.current.includes(job.experienceRequired)));
+    }
   };
 
   return (
@@ -123,7 +140,7 @@ const FindJobs = () => {
           </div>
 
           <div className='w-full flex flex-wrap gap-4'>
-            {jobs.map((job, index) => (
+            {allJobs.map((job, index) => (
               <JobCard job={job} key={index} />
             ))}
           </div>
