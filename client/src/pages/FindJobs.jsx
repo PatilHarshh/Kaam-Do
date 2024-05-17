@@ -24,18 +24,22 @@ const FindJobs = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-
   const filterJobs = (val) => {
-    if (filterJobTypes?.includes(val)) {
-      setFilterJobTypes(filterJobTypes.filter((el) => el != val));
+    const isChecked = filterJobTypes.includes(val);
+  
+    if (isChecked) {
+      setFilterJobTypes([]);
     } else {
-      setFilterJobTypes([...filterJobTypes, val]);
+      setFilterJobTypes([val]);
     }
   };
+  
 
   const filterExperience = async (e) => {
     setFilterExp(e);
   };
+ 
+  
 
   return (
     <div>
@@ -64,6 +68,7 @@ const FindJobs = () => {
                 <MdOutlineKeyboardArrowDown />
               </button>
             </div>
+            
 
             <div className='flex flex-col gap-2'>
               {jobTypes.map((jtype, index) => (

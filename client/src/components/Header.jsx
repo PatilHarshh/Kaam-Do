@@ -44,16 +44,16 @@ const Header = ({
   return (
     <div className='bg-[#f7fdfd]'>
       <div
-        className={`container mx-auto px-5 ${
-          type ? "h-[500px]" : "h-[350px]"
+        className={`  container mx-auto px-5 ${
+          type ? "h-[710px] hover: bg-grey-300" : "h-[250px]"
         } flex items-center relative`}
       >
         <div className='w-full z-10'>
-          <div className='mb-8'>
-            <p className='text-slate-700 font-bold text-4xl'>{title}</p>
+          <div className='mb-9'>
+            <p className='text-slate-600 font-bold text-4xl'>{title}</p>
           </div>
 
-          <div className='w-full flex items-center justify-around bg-white px-2 md:px-5 py-2.5 md:py-4 shadow-2xl rounded-full'>
+          <div className='  w-full flex items-center justify-around hover: bg-white px-3 md:px-5 py-2.5 md:py-4 shadow-2xl rounded-full '>
             <SearchInput
               placeholder='Job Title or Keywords'
               icon={<AiOutlineSearch className='text-gray-600 text-xl' />}
@@ -73,14 +73,14 @@ const Header = ({
                 onClick={handleClick}
                 title='Search'
                 containerStyles={
-                  "text-white py-2 md:py3 px-3 md:px-10 focus:outline-none bg-blue-600 rounded-full md:rounded-md text-sm md:text-base"
-                }
+                  `bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded`}
+                               
               />
             </div>
           </div>
 
           {type && (
-            <div className='w-full lg:1/2 flex flex-wrap gap-3 md:gap-6 py-10 md:py-14'>
+            <div className='w-full lg:1/2 flex flex-wrap gap3 md:gap-7 py-10 md:py-14'>
               {popularSearch.map((search, index) => (
                 <span
                   key={index}

@@ -95,7 +95,9 @@ body {
   position: relative;
 }
 
-
+.flex{
+  background-color: ;
+}
 
 .dots-container {
   display: flex;
