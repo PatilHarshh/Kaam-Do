@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
 
       <div className='bg-[#1d4ed8] '>
-        <div className='container px-5 py-20 mx-auto '>
+        <div className=' '>
           <div className='w-full flex flex-wrap gap-10 justify-between -mb-10 -px-4'>
             {footerLinks.map(({ id, title, links }) => (
               <div className='w-auto px-4 ' key={id + title}>
@@ -57,7 +57,7 @@ const Footer = () => {
           <div className='container mx-auto px-8 pt-6 pb-8 flex flex-wrap items-center justify-between '>
             <div className='w-full md:w-2/4 lg:w-1/3 h-16 flex items-center justify-center md:justify-start '>
               <TextInput
-                styles='w-full flex-grow md:w-40 2xl:w-72 bg-gray-100 sm:mr-4 md-2'
+                styles=' flex items-center w-full flex-grow md:w-40 2xl:w-72 bg-gray-100 sm:mr-4 md-2'
                 type='email'
                 placeholder='Email Address'
               />
