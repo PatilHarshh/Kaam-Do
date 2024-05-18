@@ -12,6 +12,7 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
+import FAQs from "./components/FAQs";
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -38,6 +39,7 @@ function App() {
           />
           <Route path='/find-jobs' element={<FindJobs />} />
           <Route path='/companies' element={<Companies />} />
+          <Route path='/FAQ' element={<FAQs />} />
           <Route
             path={
               user?.user?.accountType === "seeker"
