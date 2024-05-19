@@ -13,6 +13,7 @@ import {
 } from "./pages";
 import { useSelector } from "react-redux";
 import FAQs from "./components/FAQs";
+import ApplyForm from "./pages/ApplyForm";
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -21,25 +22,26 @@ function Layout() {
   return user?.token ? (
     <Outlet />
   ) : (
-    <Navigate to='/user-auth' state={{ from: location }} replace />
+    <Navigate to="/user-auth" state={{ from: location }} replace />
   );
 }
 
 function App() {
   const { user } = useSelector((state) => state.user);
   return (
-    <main className='bg-[#f7fdfd]'>
+    <main className="bg-[#f7fdfd]">
       <Navbar />
 
       <Routes>
         <Route element={<Layout />}>
           <Route
-            path='/'
-            element={<Navigate to='/find-jobs' replace={true} />}
+            path="/"
+            element={<Navigate to="/find-jobs" replace={true} />}
           />
-          <Route path='/find-jobs' element={<FindJobs />} />
-          <Route path='/companies' element={<Companies />} />
-          <Route path='/FAQ' element={<FAQs />} />
+          <Route path="/find-jobs" element={<FindJobs />} />
+          <Route path="/companies" element={<Companies />} />
+          <Route path="/FAQ" element={<FAQs />} />
+          <Route path="/apply/:id/:title" element={<ApplyForm />} />
           <Route
             path={
               user?.user?.accountType === "seeker"
@@ -55,8 +57,8 @@ function App() {
           <Route path={"/job-detail/:id"} element={<JobDetail />} />
         </Route>
 
-        <Route path='/about-us' element={<About />} />
-        <Route path='/user-auth' element={<AuthPage />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/user-auth" element={<AuthPage />} />
       </Routes>
       {user && <Footer />}
     </main>
