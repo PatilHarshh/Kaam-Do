@@ -1,7 +1,6 @@
 import { Outlet, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import {
-
   AuthPage,
   Companies,
   CompanyProfile,
@@ -22,7 +21,6 @@ import About from "./components/About/About";
 
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
-
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -59,24 +57,20 @@ function App() {
         <Route element={<Layout />}>
           <Route element={<About />} path="/about" />
           <Route
-
             path='/'
-            element={<><SectionFirst />
-              <SectionSecond />
-              <SectionThird />
-              <SectionFourth />
-              <SectionSixth />
-              <SectionFifth />
-            </>}
+            element={
+              <>
+                <SectionFirst />
+                <SectionSecond />
+                <SectionThird />
+                <SectionFourth />
+                <SectionSixth />
+                <SectionFifth />
+              </>
+            }
           />
-          {/* <Route path='/find-jobs' element={<FindJobs />} /> */}
           <Route path='/companies' element={<Companies />} />
-
-            path="/"
-            element={<Navigate to="/find-jobs" replace={true} />}
-          />
           <Route path="/find-jobs" element={<FindJobs />} />
-          <Route path="/companies" element={<Companies />} />
           <Route
             path={
               user?.user?.accountType === "seeker"
@@ -92,6 +86,10 @@ function App() {
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
+        <Route
+          path="/"
+          element={<Navigate to="/find-jobs" replace={true} />}
+        />
       </Routes>
       {user && <Footer />}
     </main>
