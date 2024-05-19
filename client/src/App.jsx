@@ -1,5 +1,4 @@
 import { Outlet, Navigate, Route, Routes, useLocation } from "react-router-dom";
-
 import { Footer, Navbar } from "./components";
 import {
 
@@ -12,6 +11,7 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
+
 import SectionFirst from "./components/Home/SectionFirst";
 import SectionSecond from "./components/Home/SectionSecond";
 import SectionThird from "./components/Home/SectionThird";
@@ -20,6 +20,10 @@ import SectionFifth from "./components/Home/SectionFifth";
 import SectionSixth from "./components/Home/SectionSixth";
 import About from "./components/About/About";
 
+import { useEffect, useState } from "react";
+import Loader from "./components/Loader";
+
+
 function Layout() {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -27,20 +31,35 @@ function Layout() {
   return user?.token ? (
     <Outlet />
   ) : (
-    <Navigate to='/user-auth' state={{ from: location }} replace />
+    <Navigate to="/user-auth" state={{ from: location }} replace />
   );
 }
 
 function App() {
   const { user } = useSelector((state) => state.user);
-  return (
-    <main className='bg-[#f7fdfd]'>
-      <Navbar />
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
+  useEffect(() => {
+    const handleStart = () => setLoading(true);
+    const handleComplete = () => setLoading(false);
+
+    handleStart();
+
+    const timer = setTimeout(handleComplete, 2000);
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  return (
+    <main className="bg-[#f7fdfd]">
+      <Navbar />
+      {loading && <Loader />}
       <Routes>
         <Route element={<Layout />}>
           <Route element={<About />} path="/about" />
           <Route
+
             path='/'
             element={<><SectionFirst />
               <SectionSecond />
@@ -53,6 +72,11 @@ function App() {
           {/* <Route path='/find-jobs' element={<FindJobs />} /> */}
           <Route path='/companies' element={<Companies />} />
 
+            path="/"
+            element={<Navigate to="/find-jobs" replace={true} />}
+          />
+          <Route path="/find-jobs" element={<FindJobs />} />
+          <Route path="/companies" element={<Companies />} />
           <Route
             path={
               user?.user?.accountType === "seeker"
@@ -61,15 +85,13 @@ function App() {
             }
             element={<UserProfile />}
           />
-
-          <Route path={"/company-profile"} element={<CompanyProfile />} />
-          <Route path={"/company-profile/:id"} element={<CompanyProfile />} />
-          <Route path={"/upload-job"} element={<UploadJob />} />
-          <Route path={"/job-detail/:id"} element={<JobDetail />} />
+          <Route path="/company-profile" element={<CompanyProfile />} />
+          <Route path="/company-profile/:id" element={<CompanyProfile />} />
+          <Route path="/upload-job" element={<UploadJob />} />
+          <Route path="/job-detail/:id" element={<JobDetail />} />
         </Route>
-
-        <Route path='/about-us' element={<About />} />
-        <Route path='/user-auth' element={<AuthPage />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/user-auth" element={<AuthPage />} />
       </Routes>
       {user && <Footer />}
     </main>
