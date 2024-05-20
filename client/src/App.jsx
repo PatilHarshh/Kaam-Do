@@ -1,7 +1,7 @@
 import { Outlet, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import {
-  About,
+
   AuthPage,
   Companies,
   CompanyProfile,
@@ -11,8 +11,18 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
+
+import SectionFirst from "./components/Home/SectionFirst";
+import SectionSecond from "./components/Home/SectionSecond";
+import SectionThird from "./components/Home/SectionThird";
+import SectionFourth from "./components/Home/SectionFourth";
+import SectionFifth from "./components/Home/SectionFifth";
+import SectionSixth from "./components/Home/SectionSixth";
+import About from "./components/About/About";
+
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -47,7 +57,21 @@ function App() {
       {loading && <Loader />}
       <Routes>
         <Route element={<Layout />}>
+          <Route element={<About />} path="/about" />
           <Route
+
+            path='/'
+            element={<><SectionFirst />
+              <SectionSecond />
+              <SectionThird />
+              <SectionFourth />
+              <SectionSixth />
+              <SectionFifth />
+            </>}
+          />
+          {/* <Route path='/find-jobs' element={<FindJobs />} /> */}
+          <Route path='/companies' element={<Companies />} />
+
             path="/"
             element={<Navigate to="/find-jobs" replace={true} />}
           />

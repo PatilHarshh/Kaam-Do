@@ -10,7 +10,7 @@ import { users } from "../utils/data";
 import { useSelector } from "react-redux";
 
 function MenuList({ user, onClick }) {
-  const handleLogout = () => {};
+  const handleLogout = () => { };
 
   return (
     <div>
@@ -52,18 +52,15 @@ function MenuList({ user, onClick }) {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    to={`${
-                      user?.accountType ? "user-profile" : "company-profile"
-                    }`}
-                    className={`${
-                      active ? "bg-blue-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md p-2 text-sm`}
+                    to={`${user?.accountType ? "user-profile" : "company-profile"
+                      }`}
+                    className={`${active ? "bg-blue-500 text-white" : "text-gray-900"
+                      } group flex w-full items-center rounded-md p-2 text-sm`}
                     onClick={onClick}
                   >
                     <CgProfile
-                      className={`${
-                        active ? "text-white" : "text-gray-600"
-                      } mr-2 h-5 w-5  `}
+                      className={`${active ? "text-white" : "text-gray-600"
+                        } mr-2 h-5 w-5  `}
                       aria-hidden='true'
                     />
                     {user?.accountType ? "User Profile" : "Company Profile"}
@@ -75,14 +72,12 @@ function MenuList({ user, onClick }) {
                 {({ active }) => (
                   <button
                     onClick={() => handleLogout()}
-                    className={`${
-                      active ? "bg-blue-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    className={`${active ? "bg-blue-500 text-white" : "text-gray-900"
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     <AiOutlineLogout
-                      className={`${
-                        active ? "text-white" : "text-gray-600"
-                      } mr-2 h-5 w-5  `}
+                      className={`${active ? "text-white" : "text-gray-600"
+                        } mr-2 h-5 w-5  `}
                       aria-hidden='true'
                     />
                     Log Out
@@ -106,7 +101,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='relative bg-[#f7fdfd] z-50'>
+      <div className='relative bg-[#eee6db] z-50'>
         <nav className='container mx-auto flex items-center justify-between p-5 '>
           <div>
             <Link to='/' className='text-orange-600 font-bold text-xl'>
@@ -116,17 +111,24 @@ const Navbar = () => {
 
           <ul className='hidden lg:flex gap-10 text-base'>
             <li>
-              <Link to='/'>Find Job</Link>
+              <Link to='/demos'>Demos</Link>
+            </li>
+            <li>
+              <Link to='/find-jobs'>Find Jobs</Link>
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
             </li>
             <li>
               <Link to='/companies'>Companies</Link>
             </li>
             <li>
-              <Link to='/upload-job'>Upload Job</Link>
+              <Link to='/candidates'>Candidates</Link>
             </li>
             <li>
-              <Link to='/about-us'>About</Link>
+              <Link to='/blogs'>Blogs</Link>
             </li>
+
           </ul>
 
           <div className='hidden lg:block'>
@@ -154,16 +156,16 @@ const Navbar = () => {
 
         {/* MOBILE MENU */}
         <div
-          className={`${
-            isOpen ? "absolute flex bg-[#f7fdfd] " : "hidden"
-          } container mx-auto lg:hidden flex-col pl-8 gap-3 py-5`}
+          className={`${isOpen ? "absolute flex bg-[#eee6db] " : "hidden"
+            } container mx-auto lg:hidden flex-col pl-8 gap-3 py-5`}
         >
-          <Link to='/' onClick={handleCloseNavbar}>
-            Find Job
-          </Link>
-          <Link to='/companies' onClick={handleCloseNavbar}>
-            Companies
-          </Link>
+
+          <Link to='/demos'>Demos</Link>
+          <Link to='/find-jobs'>Find Jobs</Link>
+          <Link to='/about'>About us</Link>
+          <Link to='/companies'>Companies</Link>
+          <Link to='/candidates'>Candidates</Link>
+          <Link to='/blogs'>Blogs</Link>
           <Link
             onClick={handleCloseNavbar}
             to={
@@ -172,9 +174,7 @@ const Navbar = () => {
           >
             {user?.accountType === "seeker" ? "Applications" : "Upload Job"}
           </Link>
-          <Link to='/about-us' onClick={handleCloseNavbar}>
-            About
-          </Link>
+
 
           <div className='w-full py-10'>
             {!user?.token ? (
