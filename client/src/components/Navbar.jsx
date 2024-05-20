@@ -109,9 +109,15 @@ const Navbar = () => {
       <div className='relative bg-[#f7fdfd] z-50'>
         <nav className='container mx-auto flex items-center justify-between p-5 '>
           <div>
-            <Link to='/' className='text-orange-600 font-bold text-xl'>
+            {/* <Link to='/' className='text-orange-600 font-bold text-xl'>
               Kaam<span className='text-[#fb923c]'>Do</span>
-            </Link>
+            </Link> */}
+            {/* <img src="logo.png" alt="KaamDo" className="w-16 h-16" /> */}
+            <img
+  src="logo.png"
+  alt="KaamDo"
+  className="w-16 h-16 object-cover"  />
+
           </div>
 
           <ul className='hidden lg:flex gap-10 text-base'>
