@@ -79,7 +79,7 @@ const SignUp = ({ open, setOpen }) => {
                       className={`flex-1 px-4 py-2 rounded text-sm outline-none ${
                         accountType !== "seeker"
                           ? "bg-[#1d4fd862] text-blue-900 font-semibold"
-                          : "bg-white border border-blue-400"
+                          : "bg-white border border-blue-400 "
                       }`}
                       onClick={() => setAccountType("company")}
                     >

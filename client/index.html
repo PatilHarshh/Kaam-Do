@@ -11,6 +11,14 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script type="module">
+    import { createNightowl } from '@bufferhead/nightowl'
+
+    createNightowl({
+        defaultMode: 'dark',
+        toggleButtonMode: 'newState'
+    })
+</script>
 </body>
 
 </html>
