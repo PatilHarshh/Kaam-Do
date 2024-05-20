@@ -16,7 +16,6 @@ import ApplyForm from "./pages/ApplyForm";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 
-
 function Layout() {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -49,30 +48,27 @@ function App() {
       <Navbar />
       {loading && <Loader />}
       <Routes>
-        <Route element={<Layout />}>
-          <Route
-            path="/"
-            element={<Navigate to="/find-jobs" replace={true} />}
-          />
-          <Route path="/find-jobs" element={<FindJobs />} />
-          <Route path="/companies" element={<Companies />} />
-          <Route path="/FAQ" element={<FAQs />} />
-          <Route path="/apply/:id/:title" element={<ApplyForm />} />
+        <Route element={<Layout />} />
+        <Route path="/" element={<Navigate to="/find-jobs" replace={true} />} />
+        <Route path="/find-jobs" element={<FindJobs />} />
+        <Route path="/companies" element={<Companies />} />
+        <Route path="/FAQ" element={<FAQs />} />
+        <Route path="/apply/:id/:title" element={<ApplyForm />} />
 
-          <Route
-            path={
-              user?.user?.accountType === "seeker"
-                ? "/user-profile"
-                : "/user-profile/:id"
-            }
-            element={<UserProfile />}
-          />
-          <Route path="/company-profile" element={<CompanyProfile />} />
-          <Route path="/company-profile/:id" element={<CompanyProfile />} />
-          <Route path="/upload-job" element={<UploadJob />} />
-          <Route path="/job-detail/:id" element={<JobDetail />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/user-auth" element={<AuthPage />} />
+        <Route
+          path={
+            user?.user?.accountType === "seeker"
+              ? "/user-profile"
+              : "/user-profile/:id"
+          }
+          element={<UserProfile />}
+        />
+        <Route path="/company-profile" element={<CompanyProfile />} />
+        <Route path="/company-profile/:id" element={<CompanyProfile />} />
+        <Route path="/upload-job" element={<UploadJob />} />
+        <Route path="/job-detail/:id" element={<JobDetail />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/user-auth" element={<AuthPage />} />
       </Routes>
       {user && <Footer />}
     </main>
