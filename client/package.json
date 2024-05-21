@@ -10,7 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@headlessui/react": "^1.7.15",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "moment": "^2.29.4",
@@ -21,6 +26,7 @@
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.1",
     "slugify": "^1.6.6"
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
