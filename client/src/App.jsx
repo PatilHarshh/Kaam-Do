@@ -1,7 +1,6 @@
 import { Outlet, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import {
-  About,
   AuthPage,
   Companies,
   CompanyProfile,
@@ -11,6 +10,15 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
+
+import SectionFirst from "./components/Home/SectionFirst";
+import SectionSecond from "./components/Home/SectionSecond";
+import SectionThird from "./components/Home/SectionThird";
+import SectionFourth from "./components/Home/SectionFourth";
+import SectionFifth from "./components/Home/SectionFifth";
+import SectionSixth from "./components/Home/SectionSixth";
+import About from "./components/About/About";
+
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 
@@ -47,12 +55,22 @@ function App() {
       {loading && <Loader />}
       <Routes>
         <Route element={<Layout />}>
+          <Route element={<About />} path="/about" />
           <Route
-            path="/"
-            element={<Navigate to="/find-jobs" replace={true} />}
+            path='/'
+            element={
+              <>
+                <SectionFirst />
+                <SectionSecond />
+                <SectionThird />
+                <SectionFourth />
+                <SectionSixth />
+                <SectionFifth />
+              </>
+            }
           />
+          <Route path='/companies' element={<Companies />} />
           <Route path="/find-jobs" element={<FindJobs />} />
-          <Route path="/companies" element={<Companies />} />
           <Route
             path={
               user?.user?.accountType === "seeker"
@@ -68,6 +86,10 @@ function App() {
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
+        <Route
+          path="/"
+          element={<Navigate to="/find-jobs" replace={true} />}
+        />
       </Routes>
       {user && <Footer />}
     </main>
