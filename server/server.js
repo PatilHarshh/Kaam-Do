@@ -8,6 +8,8 @@ import xss from'xss-clean';
 import ExpressMongoSanitize from 'express-mongo-sanitize';
 import dbConnection from './dbConfig/dbConnection.js';
 
+import UserRoutes from './routes/UserRoutes.js';
+
 dotenv.config();
 
 const app = express();
@@ -30,6 +32,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(morgan("dev"));
 
 
+app.use("/api/v1/user" ,  UserRoutes)
 // Listen
 app.listen(PORT, ()=>{
     console.log(`Development server running on port: ${PORT}`);
