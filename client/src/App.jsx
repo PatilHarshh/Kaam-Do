@@ -21,6 +21,7 @@ import About from "./components/About/About";
 
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import Contact from "./components/Contact/contact";
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -56,6 +57,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route element={<About />} path="/about" />
+          <Route element={<Contact />} path="/contact-us" />
           <Route
             path='/'
             element={

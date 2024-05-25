@@ -128,6 +128,9 @@ const Navbar = () => {
             <li>
               <Link to='/blogs'>Blogs</Link>
             </li>
+            <li>
+              <Link to='/contact-us'>Contact Us</Link>
+            </li>
 
           </ul>
 
@@ -166,6 +169,7 @@ const Navbar = () => {
           <Link to='/companies'>Companies</Link>
           <Link to='/candidates'>Candidates</Link>
           <Link to='/blogs'>Blogs</Link>
+          <Link to='/contact-us'>Contact Us</Link>
           <Link
             onClick={handleCloseNavbar}
             to={
