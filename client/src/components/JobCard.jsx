@@ -7,8 +7,7 @@ const JobCard = ({ job }) => {
     <Link to={`/job-detail/${job?.id}`}>
       <div
         className='w-full md:w-[16rem] 2xl:w-[18rem] h-[16rem] md:h-[18rem] bg-white flex flex-col justify-between shadow-lg 
-                rounded-md px-3 py-5 '
-      >
+                rounded-md px-3 py-5  hover:scale-105 transition duration-500 ease-in-out border border-transparent hover:border-black hover:shadow-lg rounded-lg p-4'>
         <div className='flex gap-3'>
           <img
             src={job?.company?.profileUrl}

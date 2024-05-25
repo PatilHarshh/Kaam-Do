@@ -18,7 +18,7 @@ const JobDetail = () => {
   }, [id]);
 
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto ml-10 mt-3'>
       <div className='w-full flex flex-col md:flex-row gap-10'>
         {/* LEFT SIDE */}
         <div className='w-full h-fit md:w-2/3 2xl:2/4 bg-white px-5 py-10 md:px-10 shadow-md'>
@@ -99,7 +99,7 @@ const JobDetail = () => {
               containerStyles={`w-full flex items-center justify-center  py-3 px-5 outline-none rounded-full text-sm ${
                 selected === "1"
                   ? "bg-black text-white"
-                  : "bg-white text-black border border-gray-300"
+                  : "bg-white text-black border border-gray-300 hover:bg-slate-100"
               }`}
             />
           </div>
