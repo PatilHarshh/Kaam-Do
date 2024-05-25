@@ -12,8 +12,6 @@ const FindJobs = () => {
   const [sort, setSort] = useState("Newest");
   const [page, setPage] = useState(1);
   const [numPage, setNumPage] = useState(1);
-  const [recordCount, setRecordCount] = useState(0);
-  const [data, setData] = useState([]);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [jobLocation, setJobLocation] = useState("");
@@ -22,19 +20,49 @@ const FindJobs = () => {
 
   const [isFetching, setIsFetching] = useState(false);
 
-  const location = useLocation();
-  const navigate = useNavigate();
-
   const filterJobs = (val) => {
-    if (filterJobTypes?.includes(val)) {
-      setFilterJobTypes(filterJobTypes.filter((el) => el != val));
+    if (filterJobTypes.includes(val)) {
+      setFilterJobTypes(filterJobTypes.filter((el) => el !== val));
     } else {
       setFilterJobTypes([...filterJobTypes, val]);
     }
   };
 
-  const filterExperience = async (e) => {
-    setFilterExp(e);
+  const filterExperience = (e) => {
+    const val = e.target.value;
+    if (filterExp.includes(val)) {
+      setFilterExp(filterExp.filter((el) => el !== val));
+    } else {
+      setFilterExp([...filterExp, val]);
+    }
+  };
+
+  const getFilteredJobs = () => {
+    let filtered = jobs;
+
+    if (filterJobTypes.length > 0) {
+      filtered = filtered.filter((job) => filterJobTypes.includes(job.jobType));
+    }
+
+    if (filterExp.length > 0) {
+      filtered = filtered.filter((job) =>
+        filterExp.some((exp) => job.experience.includes(exp))
+      );
+    }
+
+    if (searchQuery) {
+      filtered = filtered.filter((job) =>
+        job.jobTitle.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    if (jobLocation) {
+      filtered = filtered.filter((job) =>
+        job.location.toLowerCase().includes(jobLocation.toLowerCase())
+      );
+    }
+
+    return filtered;
   };
 
   return (
@@ -99,7 +127,7 @@ const FindJobs = () => {
                     type='checkbox'
                     value={exp?.value}
                     className='w-4 h-4'
-                    onChange={(e) => filterExperience(e.target.value)}
+                    onChange={filterExperience}
                   />
                   <span>{exp.title}</span>
                 </div>
@@ -111,7 +139,7 @@ const FindJobs = () => {
         <div className='w-full md:w-5/6 px-5 md:px-0'>
           <div className='flex items-center justify-between mb-4'>
             <p className='text-sm md:text-base'>
-              Showing: <span className='font-semibold'>1,902</span> Jobs
+              Showing: <span className='font-semibold'>{getFilteredJobs().length}</span> Jobs
               Available
             </p>
 
@@ -123,7 +151,7 @@ const FindJobs = () => {
           </div>
 
           <div className='w-full flex flex-wrap gap-4'>
-            {jobs.map((job, index) => (
+            {getFilteredJobs().map((job, index) => (
               <JobCard job={job} key={index} />
             ))}
           </div>
