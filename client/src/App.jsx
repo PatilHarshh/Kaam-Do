@@ -21,6 +21,8 @@ import About from "./components/About/About";
 
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import Register from "./pages/CandidatePage";
+import CandidatePage from "./pages/CandidatePage";
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -86,6 +88,7 @@ function App() {
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
+       <Route path="/candidates" element={<CandidatePage/>}/>
         <Route
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}

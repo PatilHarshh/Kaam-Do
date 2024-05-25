@@ -1,0 +1,62 @@
+/* Candidate page styling */
+.candidate-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Candidate card styling */
+.candidate-card {
+  width: 220px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  box-sizing: border-box; /* Ensure padding and border are included in width and height */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensure content does not overflow */
+  border-radius: 8px;
+  background-color: #fff; /* Add a background color for better readability */
+}
+
+/* Candidate image styling */
+.candidate-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd; /* Add a border between the image and details */
+}
+
+/* Candidate details styling */
+.candidate-details {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Ensure details section takes the remaining height */
+}
+
+/* Candidate name styling */
+.candidate-name {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Candidate position styling */
+.candidate-position {
+  font-size: 0.9em;
+  color: #777;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Candidate description styling */
+.candidate-description {
+  font-size: 0.8em;
+  color: #555;
+  text-align: center;
+  margin-top: 5px;
+}
