@@ -10,7 +10,7 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
-import FAQs from "./components/FAQs";
+import FAQs from "./components/FAQs.jsx";
 import ApplyForm from "./pages/ApplyForm";
 import SectionFirst from "./components/Home/SectionFirst";
 import SectionSecond from "./components/Home/SectionSecond";
