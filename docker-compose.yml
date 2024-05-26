@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+
+  server:
+    restart: always
+    build:
+      context: server
+    ports:
+      - "8800:8800"
+    environment:
+      - MONGODB_URL=${MONGODB_URL}
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - kaam-do-network
+
+  client:
+    restart: always
+    build:
+      context: client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - kaam-do-network
+
+networks:
+  kaam-do-network:
+    driver: bridge
