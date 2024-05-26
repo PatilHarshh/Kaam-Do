@@ -12,7 +12,6 @@ import {
 import { useSelector } from "react-redux";
 import FAQs from "./components/FAQs";
 import ApplyForm from "./pages/ApplyForm";
-
 import SectionFirst from "./components/Home/SectionFirst";
 import SectionSecond from "./components/Home/SectionSecond";
 import SectionThird from "./components/Home/SectionThird";
@@ -90,6 +89,12 @@ function App() {
             }
           />
         </Route>
+        <Route path="/about-us" element={<About />} />
+        <Route path="/user-auth" element={<AuthPage />} />
+        <Route
+          path="/"
+          element={<Navigate to="/find-jobs" replace={true} />}
+        />
       </Routes>
       {user && <Footer />}
     </main>
