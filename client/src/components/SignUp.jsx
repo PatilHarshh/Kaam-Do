@@ -167,7 +167,7 @@ const SignUp = ({ open, setOpen }) => {
                     <div className='w-full flex gap-1 md:gap-2'>
                       <div className={`${isRegister ? "w-1/2" : "w-full"}`}>
                         <TextInput
-                          name='password'
+                          name='Password'
                           label='Password'
                           placeholder='Password'
                           type='password'
