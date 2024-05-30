@@ -11,7 +11,7 @@ import {
 } from "./pages";
 import { useSelector } from "react-redux";
 import FAQs from "./components/FAQs.jsx";
-import ApplyForm from "./pages/ApplyForm";
+// import ApplyForm from "./pages/ApplyForm";
 import SectionFirst from "./components/Home/SectionFirst";
 import SectionSecond from "./components/Home/SectionSecond";
 import SectionThird from "./components/Home/SectionThird";
@@ -60,7 +60,7 @@ function App() {
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/companies" element={<Companies />} />
           <Route path="/FAQ" element={<FAQs />} />
-          <Route path="/apply/:id/:title" element={<ApplyForm />} />
+          {/* <Route path="/apply/:id/:title" element={<ApplyForm />} /> */}
           <Route path="/about-us" element={<About />} />
           <Route path="/user-auth" element={<AuthPage />} />
           <Route path="/job-detail/:id" element={<JobDetail />} />
