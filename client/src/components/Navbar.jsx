@@ -19,7 +19,7 @@ function MenuList({ user, onClick }) {
             <p className="text-sm font-semibold">{user?.firstName ?? user?.name}</p>
             <span className="text-sm text-blue-600">{user?.jobTitle ?? user?.email}</span>
           </div>
-          <img
+          <img  
             src={user?.profileUrl}
             alt="user profile"
             className="w-10 h-10 rounded-full object-cover"
@@ -93,7 +93,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative bg-[#f9f9f9] z-50 shadow-md">
+    <div className="sticky top-0 w-full bg-[#f9f9f9] z-50 shadow-md">
       <nav className="container mx-auto flex items-center justify-between p-5">
         <Link to="/" className="text-orange-600 font-bold text-xl">
           Kaam<span className="text-[#fb923c]">Do</span>
@@ -188,3 +188,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
