@@ -6,6 +6,18 @@ const SectionThird = () => {
   return (
     <Box sx={{ backgroundColor: '#eee6db', py: 8 }}>
       <Container>
+        <style>
+          {`
+            .card-hover {
+              transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            }
+            .card-hover:hover {
+              transform: translateY(-10px);
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              cursor: pointer;
+            }
+          `}
+        </style>
         <Typography variant="h4" align="left" gutterBottom color="black">
           Featured Job Offers
         </Typography>
@@ -15,7 +27,7 @@ const SectionThird = () => {
         <Grid container spacing={3} justifyContent="center">
           {jobs.map(job => (
             <Grid item key={job.id} xs={12} sm={6} md={3}>
-              <Card sx={{ borderRadius: 10 }}>
+              <Card className="card-hover" sx={{ borderRadius: 10 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '150px', backgroundColor: '#f5f5f5', borderTopLeftRadius: 10, borderTopRightRadius: 10 }}>
                   <CardMedia
                     component="img"
