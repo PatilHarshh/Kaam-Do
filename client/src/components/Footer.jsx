@@ -34,13 +34,13 @@ const Footer = () => {
                 </h2>
 
                 <div className=" flex flex-col gap-2 ">
-                  {links.map((link, index) => (
+                  {links.map(({ name, url }, index) => (
                     <Link
-                      key={link + index}
-                      to="/"
+                      key={name + index}
+                      to={url}
                       className="text-gray-300 text-sm hover:text-white "
                     >
-                      {link}
+                      {name}
                     </Link>
                   ))}
                 </div>

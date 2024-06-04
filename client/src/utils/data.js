@@ -280,19 +280,34 @@ export const footerLinks = [
   {
     id: "01",
     title: "Company",
-    links: ["Home", "About Us", "Services", "Our Team"],
+    links: [
+      { name: "Home", url: "/" },
+      { name: "About Us", url: "/about" },
+      { name: "Services", url: "/services" },
+      { name: "Our Team", url: "/team" },
+    ],
   },
   {
     id: "02",
     title: "Policy",
-    links: ["Policies", "Contact", "FAQ"],
+    links: [
+      { name: "Policies", url: "/policies" },
+      { name: "Contact", url: "/contact" },
+      { name: "FAQ", url: "/faq" },
+    ],
   },
   {
     id: "03",
     title: "Support",
-    links: ["Account", "Support Center", "Feedback", "Accessibility"],
+    links: [
+      { name: "Account", url: "/account" },
+      { name: "Support Center", url: "/support-center" },
+      { name: "Feedback", url: "/feedback" },
+      { name: "Accessibility", url: "/accessibility" },
+    ],
   },
 ];
+
 
 export const companies = [
   {

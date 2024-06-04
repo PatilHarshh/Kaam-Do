@@ -18,10 +18,12 @@ import SectionFourth from "./components/Home/SectionFourth";
 import SectionFifth from "./components/Home/SectionFifth";
 import SectionSixth from "./components/Home/SectionSixth";
 import About from "./components/About/About";
+import ContactForm from "./components/ContactForm"; // Importing ContactForm
 
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 
+// Layout component to handle protected routes
 function Layout() {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -44,6 +46,7 @@ function App() {
 
     handleStart();
 
+    // Simulate a loading time for demo purposes
     const timer = setTimeout(handleComplete, 2000);
 
     return () => clearTimeout(timer);
@@ -55,41 +58,34 @@ function App() {
       {loading && <Loader />}
       <Routes>
         <Route element={<Layout />}>
-          <Route element={<About />} path="/about" />
-          <Route
-            path='/'
-            element={
-              <>
-                <SectionFirst />
-                <SectionSecond />
-                <SectionThird />
-                <SectionFourth />
-                <SectionSixth />
-                <SectionFifth />
-              </>
-            }
-          />
-          <Route path='/companies' element={<Companies />} />
+          <Route path="/" element={
+            <>
+              <SectionFirst />
+              <SectionSecond />
+              <SectionThird />
+              <SectionFourth />
+              <SectionFifth />
+              <SectionSixth />
+              <ContactForm /> {/* Adding ContactForm to the home page */}
+            </>
+          } />
+          <Route path="/companies" element={<Companies />} />
           <Route path="/find-jobs" element={<FindJobs />} />
-          <Route
-            path={
-              user?.user?.accountType === "seeker"
-                ? "/user-profile"
-                : "/user-profile/:id"
-            }
-            element={<UserProfile />}
-          />
+          <Route path={
+            user?.user?.accountType === "seeker"
+              ? "/user-profile"
+              : "/user-profile/:id"
+          } element={<UserProfile />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/company-profile/:id" element={<CompanyProfile />} />
           <Route path="/upload-job" element={<UploadJob />} />
           <Route path="/job-detail/:id" element={<JobDetail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactForm />} /> {/* Route for ContactForm */}
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
-        <Route
-          path="/"
-          element={<Navigate to="/find-jobs" replace={true} />}
-        />
+       {/* <Route path="*" element={<Navigate to="/find-jobs" replace />} /> */}
       </Routes>
       {user && <Footer />}
     </main>
