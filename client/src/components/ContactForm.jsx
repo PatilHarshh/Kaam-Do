@@ -35,7 +35,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white border border-gray-300 rounded-lg shadow-lg">
+    <div className="max-w-md mx-auto p-6 mt-16 bg-white border border-gray-300 rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="form-group">
