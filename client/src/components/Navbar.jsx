@@ -101,7 +101,7 @@ const Navbar = () => {
 
         <ul className="hidden lg:flex gap-10 text-base text-gray-700">
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/demos">Demos</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             <Link to="/find-jobs">Find Jobs</Link>
@@ -144,8 +144,8 @@ const Navbar = () => {
       {/* MOBILE MENU */}
       <div className={`${isOpen ? "block bg-[#f9f9f9]" : "hidden"} w-full lg:hidden`}>
         <div className="container mx-auto flex flex-col pl-8 gap-3 py-5">
-          <Link to="/demos" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            Demos
+          <Link to="/" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Home
           </Link>
           <Link to="/find-jobs" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             Find Jobs
