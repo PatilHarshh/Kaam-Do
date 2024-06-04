@@ -37,7 +37,7 @@ const Footer = () => {
                   {links.map((link, index) => (
                     <Link
                       key={link + index}
-                      to={`/${link}`}
+                      to="/"
                       className="text-gray-300 text-sm hover:text-white "
                     >
                       {link}
