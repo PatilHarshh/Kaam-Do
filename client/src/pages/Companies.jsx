@@ -17,11 +17,22 @@ const Companies = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleSearchSubmit = () => {};
-  const handleShowMore = () => {};
+  const handleSearchSubmit = () => { };
+  const handleShowMore = () => { };
 
   return (
     <div className='w-full'>
+      <style>
+        {`
+          .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          }
+          .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          }
+        `}
+      </style>
       <Header
         title='Find Your Dream Company'
         handleClick={handleSearchSubmit}
@@ -34,7 +45,7 @@ const Companies = () => {
       <div className='container mx-auto flex flex-col gap-5 2xl:gap-10 px-5 md:px-0 py-6 bg-[#f7fdfd]'>
         <div className='flex items-center justify-between mb-4'>
           <p className='text-sm md:text-base'>
-            Shwoing: <span className='font-semibold'>1,902</span> Companies
+            Showing: <span className='font-semibold'>1,902</span> Companies
             Available
           </p>
 
@@ -47,7 +58,9 @@ const Companies = () => {
 
         <div className='w-full flex flex-col gap-6'>
           {data?.map((cmp, index) => (
-            <CompanyCard cmp={cmp} key={index} />
+            <div className="card-hover" key={index}>
+              <CompanyCard cmp={cmp} />
+            </div>
           ))}
 
           {isFetching && (
@@ -72,7 +85,7 @@ const Companies = () => {
         )}
       </div>
       {/* Top Scroll Btn */}
-      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
+      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); }} />
     </div>
   );
 };
