@@ -29,9 +29,18 @@ const SectionFourth = () => {
 
   return (
     <Container>
-
       <Box sx={{ py: 8 }}>
-
+        <style>
+          {`
+            .card-hover {
+              transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            }
+            .card-hover:hover {
+              transform: translateY(-10px);
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+          `}
+        </style>
         <Typography variant="h4" align="left" gutterBottom color="black">
           Find Best Companies
         </Typography>
@@ -41,7 +50,7 @@ const SectionFourth = () => {
         <Grid container spacing={3} justifyContent="center">
           {companies.map(company => (
             <Grid item key={company.id} xs={12} sm={6} md={4}>
-              <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <Card className="card-hover" sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <CardMedia
                   component="img"
                   height="150"
@@ -66,7 +75,6 @@ const SectionFourth = () => {
         </Grid>
       </Box>
     </Container>
-
   );
 };
 
