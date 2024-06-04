@@ -9,21 +9,21 @@ const SectionFourth = () => {
       name: 'Google',
       description: 'Explore opportunities at Google.',
       jobs: 5000, // Total number of jobs
-      image: 'https://via.placeholder.com/150', // Example image URL
+      image: 'https://static01.nyt.com/images/2019/06/18/business/18google/merlin_155876157_28d611ed-0437-4e3a-819e-c4ecb616d59e-superJumbo.jpg', // Example image URL
     },
     {
       id: '2',
       name: 'Amazon',
       description: 'Join Amazon and build the future.',
       jobs: 8000,
-      image: 'https://via.placeholder.com/150', // Example image URL
+      image: 'https://www.accountancydaily.co/sites/default/files/styles/media_thumbnail/public/field/image/amazon_adobestock_291428005_editorial_use_only.jpeg?itok=rt2oGCMy', // Example image URL
     },
     {
       id: '3',
       name: 'Microsoft',
       description: 'Innovate with Microsoft.',
       jobs: 10000,
-      image: 'https://via.placeholder.com/150', // Example image URL
+      image: 'https://www.investmentmonitor.ai/wp-content/uploads/sites/7/2021/12/microsoft-headquarters-fdi.jpg', // Example image URL
     },
   ];
 
