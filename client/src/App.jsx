@@ -64,8 +64,8 @@ function App() {
               <SectionSecond />
               <SectionThird />
               <SectionFourth />
-              <SectionFifth />
               <SectionSixth />
+              <SectionFifth />
               <ContactForm /> {/* Adding ContactForm to the home page */}
             </>
           } />
