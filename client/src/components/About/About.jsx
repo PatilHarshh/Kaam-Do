@@ -12,7 +12,6 @@ const About = () => {
       <SectionSecond />
       <SectionThird />
       <SectionFourth />
-
     </div>
   );
 };

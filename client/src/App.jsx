@@ -21,6 +21,7 @@ import About from "./components/About/About";
 
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import { BiArrowToTop } from "react-icons/bi";
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -74,7 +75,7 @@ function App() {
           <Route
             path={
               user?.user?.accountType === "seeker"
-                ? "/user-profile"
+              ? "/user-profile"
                 : "/user-profile/:id"
             }
             element={<UserProfile />}
@@ -91,6 +92,7 @@ function App() {
           element={<Navigate to="/find-jobs" replace={true} />}
         />
       </Routes>
+      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
       {user && <Footer />}
     </main>
   );
