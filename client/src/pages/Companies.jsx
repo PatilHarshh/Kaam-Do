@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CompanyCard, CustomButton, Header, ListBox } from "../components";
 import { companies } from "../utils/data";
-import { BiArrowToTop } from "react-icons/bi";
 
 const Companies = () => {
   const [page, setPage] = useState(1);
@@ -84,8 +83,6 @@ const Companies = () => {
           </div>
         )}
       </div>
-      {/* Top Scroll Btn */}
-      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); }} />
     </div>
   );
 };
