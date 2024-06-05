@@ -1,54 +1,98 @@
-import React from 'react';
-import { Box, Grid, Typography, Card, CardContent, CardMedia, Container } from '@mui/material';
+import React from "react";
 
 const SectionSecond = () => {
   // Sample data for categories
   const categories = [
-    { id: 1, title: 'Marketing', positions: '2 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Marketing' },
-    { id: 2, title: 'Finance', positions: '3 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Finance' },
-    { id: 3, title: 'IT', positions: '5 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=IT' },
-    { id: 4, title: 'Human Resources', positions: '1 open position', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=HR' },
-    { id: 5, title: 'Operations', positions: '4 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Operations' },
-    { id: 6, title: 'Sales', positions: '2 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Sales' },
-    { id: 7, title: 'Customer Service', positions: '3 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Customer+Service' },
-    { id: 8, title: 'Engineering', positions: '6 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Engineering' },
-   
+    {
+      id: 1,
+      title: "Marketing",
+      positions: "2 open positions",
+      imageUrl:
+        "https://www.firerockmarketing.com/wp-content/uploads/2016/02/shutterstock_395180611.jpg",
+    },
+    {
+      id: 2,
+      title: "Finance",
+      positions: "3 open positions",
+      imageUrl:
+        "https://dynamics.folio3.com/blog/wp-content/uploads/2021/04/Financial-Management.png",
+    },
+    {
+      id: 3,
+      title: "IT",
+      positions: "5 open positions",
+      imageUrl:
+        "https://5chat.com/wp-content/uploads/industry-2496192_1920.jpg",
+    },
+    {
+      id: 4,
+      title: "Human Resources",
+      positions: "1 open position",
+      imageUrl:
+        "https://www.zambianguardian.com/wp-content/uploads/2022/09/Types-of-human-resource-development.jpg",
+    },
+    {
+      id: 5,
+      title: "Operations",
+      positions: "4 open positions",
+      imageUrl:
+        "https://fupping.com/wp-content/uploads/2018/07/Operations.jpg",
+    },
+    {
+      id: 6,
+      title: "Sales",
+      positions: "2 open positions",
+      imageUrl:
+        "https://blog.bit.ai/wp-content/uploads/2019/07/32863956976_5623d484db_b.jpg",
+    },
+    {
+      id: 7,
+      title: "Customer Service",
+      positions: "3 open positions",
+      imageUrl:
+        "https://images.appypie.com/wp-content/uploads/2023/01/24083102/Customer-Service-Channels.jpg",
+    },
+    {
+      id: 8,
+      title: "Engineering",
+      positions: "6 open positions",
+      imageUrl:
+        "https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/05/18175106/Types-of-Engineering.png",
+    },
   ];
 
   return (
-    <Container>
+    
+    <div className=" container mx-auto py-8">
+      <h3 className="text-center  font-bold text-3xl mb-6">
+        Search by Category
+      </h3>
+      <p  className="text-center  underline font-semibold text-sm mb-8 text-gray-700"> Search your career opportunity with our categories</p>
 
-      <Box sx={{  py: 8 }}>
-        <Typography variant="h4" align="left" gutterBottom>
-          Search by Category
-        </Typography>
-        <Typography variant="body2" align="left" color="textSecondary">
-          Search your career opportunity with our categories
-        </Typography>
-        <Grid container spacing={3} justifyContent="center" sx={{ mt: 4 }}>
-          {categories.map(category => (
-            <Grid item key={category.id} xs={12} sm={6} md={3}>
-              <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: 3, borderRadius: 2 }}>
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={category.imageUrl}
-                  alt={category.title}
-                  sx={{ borderRadius: '50%', backgroundColor: '#FFDAB9' }}
-                />
-                <CardContent>
-                  <Typography variant="h5" align="center"  gutterBottom sx={{color:'black'}}>
-                    {category.title}
-                  </Typography>
-                  <Typography variant="body2" align="center" color="text.Secondary">
-                    {category.positions}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>    </Container>
+      <div className="grid  sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            className="card bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden  w-[320px] h-[370px] mx-auto transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src={category.imageUrl}
+              alt={category.title}
+              className="w-full h-[250px] object-cover"
+            />
+            <div className="p-4 text-center">
+              <h2 className="text-xl font-semibold mb-2 ">{category.title}</h2>
+               <div  className="flex justify-between items-center">
+              <p className="text-gray-700">{category.positions}</p>
+              <button className="bg-blue-500 text-white px-4 py-1 rounded-lg transition-transform duration-300 hover:bg-blue-600">View</button>
+              </div>
+            </div>
+          </div>
+     
+        ))}
+      </div>
+    </div>
+  
 
   );
 };

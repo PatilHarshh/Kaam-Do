@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { BiArrowToTop, BiBriefcaseAlt2 } from "react-icons/bi";
+import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { BsStars } from "react-icons/bs";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
@@ -39,10 +39,21 @@ const FindJobs = () => {
 
   return (
     <div>
+      <style>
+        {`
+          .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          }
+          .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          }
+        `}
+      </style>
       <Header
         title='Find Your Dream Job with Ease'
         type='home'
-        handleClick={() => {}}
+        handleClick={() => { }}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         location={jobLocation}
@@ -124,7 +135,9 @@ const FindJobs = () => {
 
           <div className='w-full flex flex-wrap gap-4'>
             {jobs.map((job, index) => (
-              <JobCard job={job} key={index} />
+              <div className="card-hover" key={index}>
+                <JobCard job={job} />
+              </div>
             ))}
           </div>
 
@@ -138,8 +151,6 @@ const FindJobs = () => {
           )}
         </div>
       </div>
-      {/* Top Scroll Btn */}
-      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
     </div>
   );
 };
