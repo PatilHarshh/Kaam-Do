@@ -19,7 +19,7 @@ function MenuList({ user, onClick }) {
             <p className="text-sm font-semibold">{user?.firstName ?? user?.name}</p>
             <span className="text-sm text-blue-600">{user?.jobTitle ?? user?.email}</span>
           </div>
-          <img
+          <img  
             src={user?.profileUrl}
             alt="user profile"
             className="w-10 h-10 rounded-full object-cover"
@@ -93,7 +93,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative bg-[#f9f9f9] z-50 shadow-md">
+    <div className="sticky top-0 w-full bg-[#f9f9f9] z-50 shadow-md">
       <nav className="container mx-auto flex items-center justify-between p-5">
         <Link to="/" className="text-orange-600 font-bold text-xl">
           Kaam<span className="text-[#fb923c]">Do</span>
@@ -101,7 +101,7 @@ const Navbar = () => {
 
         <ul className="hidden lg:flex gap-10 text-base text-gray-700">
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/demos">Demos</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             <Link to="/find-jobs">Find Jobs</Link>
@@ -144,8 +144,8 @@ const Navbar = () => {
       {/* MOBILE MENU */}
       <div className={`${isOpen ? "block bg-[#f9f9f9]" : "hidden"} w-full lg:hidden`}>
         <div className="container mx-auto flex flex-col pl-8 gap-3 py-5">
-          <Link to="/demos" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            Demos
+          <Link to="/" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Home
           </Link>
           <Link to="/find-jobs" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             Find Jobs
@@ -188,3 +188,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

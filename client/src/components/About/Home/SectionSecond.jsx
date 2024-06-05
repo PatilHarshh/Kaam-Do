@@ -4,7 +4,7 @@ import { Box, Grid, Typography, Card, CardContent, CardMedia, Container } from '
 const SectionSecond = () => {
   // Sample data for categories
   const categories = [
-    { id: 1, title: 'Marketing', positions: '2 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Marketing' },
+    { id: 1, title: 'Marketing', positions: '2 open positions', imageUrl: 'https://www.pngplay.com/wp-content/uploads/7/Digital-Marketing-Transparent-Free-PNG.png' },
     { id: 2, title: 'Finance', positions: '3 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=Finance' },
     { id: 3, title: 'IT', positions: '5 open positions', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=IT' },
     { id: 4, title: 'Human Resources', positions: '1 open position', imageUrl: 'https://via.placeholder.com/300x200/FFDAB9/FFA500?text=HR' },
