@@ -22,6 +22,7 @@ import ContactForm from "./components/ContactForm"; // Importing ContactForm
 
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import { BiArrowToTop } from "react-icons/bi";
 
 // Layout component to handle protected routes
 function Layout() {
@@ -71,11 +72,21 @@ function App() {
           } />
           <Route path="/companies" element={<Companies />} />
           <Route path="/find-jobs" element={<FindJobs />} />
+
           <Route path={
             user?.user?.accountType === "seeker"
               ? "/user-profile"
               : "/user-profile/:id"
           } element={<UserProfile />} />
+
+          <Route
+            path={
+              user?.user?.accountType === "seeker"
+              ? "/user-profile"
+                : "/user-profile/:id"
+            }
+            element={<UserProfile />}
+          />
           <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/company-profile/:id" element={<CompanyProfile />} />
           <Route path="/upload-job" element={<UploadJob />} />
@@ -87,6 +98,7 @@ function App() {
         <Route path="/user-auth" element={<AuthPage />} />
        {/* <Route path="*" element={<Navigate to="/find-jobs" replace />} /> */}
       </Routes>
+      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
       {user && <Footer />}
     </main>
   );

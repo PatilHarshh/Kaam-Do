@@ -7,25 +7,25 @@ const SectionFifth = () => {
     {
       id: '1',
       name: 'New York',
-      imageUrl: 'https://via.placeholder.com/300', // Example image URL
+      imageUrl: 'https://cdn.britannica.com/61/93061-050-99147DCE/Statue-of-Liberty-Island-New-York-Bay.jpg', // Example image URL
       openPositions: 500, // Example number of open positions
     },
     {
       id: '2',
       name: 'San Francisco',
-      imageUrl: 'https://via.placeholder.com/300', // Example image URL
+      imageUrl: 'https://media.istockphoto.com/id/1342281568/photo/golden-gate-bridge-with-clouds-over-san-francisco-california-usa.webp?b=1&s=170667a&w=0&k=20&c=_aCUoulYM84W-Sqh0hv17S8rVDx_Nd-Od6lTQFZJ11s=', // Example image URL
       openPositions: 300,
     },
     {
       id: '3',
       name: 'London',
-      imageUrl: 'https://via.placeholder.com/300', // Example image URL
+      imageUrl: 'https://burst.shopifycdn.com/photos/big-ben-clock.jpg?width=1000&format=pjpg&exif=0&iptc=0', // Example image URL
       openPositions: 700,
     },
     {
       id: '4',
       name: 'Tokyo',
-      imageUrl: 'https://via.placeholder.com/300', // Example image URL
+      imageUrl: 'https://a1.cdn.japantravel.com/photo/12865-215185/1440x960!/tokyo-tokyo-prefecture-215185.jpg', // Example image URL
       openPositions: 400,
     },
   ];

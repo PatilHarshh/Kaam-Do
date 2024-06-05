@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { BiArrowToTop, BiBriefcaseAlt2 } from "react-icons/bi";
+import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { BsStars } from "react-icons/bs";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
@@ -151,8 +151,6 @@ const FindJobs = () => {
           )}
         </div>
       </div>
-      {/* Top Scroll Btn */}
-      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); }} />
     </div>
   );
 };
