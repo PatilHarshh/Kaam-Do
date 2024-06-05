@@ -10,7 +10,7 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
-import FAQs from "./components/FAQs";
+// import FAQs from "./components/FAQs";
 import ApplyForm from "./pages/ApplyForm";
 import SectionFirst from "./components/Home/SectionFirst";
 import SectionSecond from "./components/Home/SectionSecond";
@@ -60,7 +60,7 @@ function App() {
           <Route path="/" element={<Navigate to="/find-jobs" replace />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/companies" element={<Companies />} />
-          <Route path="/FAQ" element={<FAQs />} />
+          {/* <Route path="/FAQ" element={<FAQs />} /> */}
           <Route path="/apply/:id/:title" element={<ApplyForm />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/user-auth" element={<AuthPage />} />
@@ -109,6 +109,7 @@ function App() {
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}
         />
+        </Route>
       </Routes>
       <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
       {user && <Footer />}
