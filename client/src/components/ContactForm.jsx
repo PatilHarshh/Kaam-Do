@@ -35,9 +35,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 mt-16 bg-white border border-gray-300 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="max-w-md mx-auto p-10 mt-16 bg-gradient-to-r from-blue-200 to-purple-200 border border-gray-300 rounded-lg shadow-2xl">
+      <h2 className="text-4xl font-extrabold mb-6 text-center text-gray-900">Contact Us</h2>
+      <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in">
         <div className="form-group">
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name:</label>
           <input
@@ -47,7 +47,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           />
         </div>
         <div className="form-group">
@@ -59,9 +59,9 @@ const ContactForm = () => {
             value={formData.contactNumber}
             onChange={handleChange}
             required
-            className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           />
-          {errors.contactNumber && <p className="text-red-500 text-sm">{errors.contactNumber}</p>}
+          {errors.contactNumber && <p className="text-red-500 text-sm mt-1">{errors.contactNumber}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
@@ -72,7 +72,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           />
         </div>
         <div className="form-group">
@@ -83,12 +83,13 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 resize-none"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 resize-none"
+            rows="4"
           />
         </div>
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          className="w-full py-3 px-6 bg-gradient-to-r from-pink-500 to-yellow-500 text-white font-semibold rounded-xl shadow-md hover:from-pink-600 hover:to-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:scale-110"
         >
           Submit
         </button>
