@@ -67,7 +67,6 @@ function App() {
               <SectionFourth />
               <SectionSixth />
               <SectionFifth />
-              <ContactForm /> {/* Adding ContactForm to the home page */}
             </>
           } />
           <Route path="/companies" element={<Companies />} />
