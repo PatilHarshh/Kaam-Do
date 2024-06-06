@@ -10,7 +10,8 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
-
+// import FAQs from "./components/FAQs";
+import ApplyForm from "./pages/ApplyForm";
 import SectionFirst from "./components/Home/SectionFirst";
 import SectionSecond from "./components/Home/SectionSecond";
 import SectionThird from "./components/Home/SectionThird";
@@ -56,9 +57,27 @@ function App() {
       {loading && <Loader />}
       <Routes>
         <Route element={<Layout />}>
-          <Route element={<About />} path="/about" />
+          <Route path="/" element={<Navigate to="/find-jobs" replace />} />
+          <Route path="/find-jobs" element={<FindJobs />} />
+          <Route path="/companies" element={<Companies />} />
+          {/* <Route path="/FAQ" element={<FAQs />} /> */}
+          <Route path="/apply/:id/:title" element={<ApplyForm />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/user-auth" element={<AuthPage />} />
+          <Route path="/job-detail/:id" element={<JobDetail />} />
+          <Route path="/upload-job" element={<UploadJob />} />
           <Route
-            path='/'
+            path={
+              user?.user?.accountType === "seeker"
+                ? "/user-profile"
+                : "/user-profile/:id"
+            }
+            element={<UserProfile />}
+          />
+          <Route path="/company-profile" element={<CompanyProfile />} />
+          <Route path="/company-profile/:id" element={<CompanyProfile />} />
+          <Route
+            path="/"
             element={
               <>
                 <SectionFirst />
@@ -84,13 +103,13 @@ function App() {
           <Route path="/company-profile/:id" element={<CompanyProfile />} />
           <Route path="/upload-job" element={<UploadJob />} />
           <Route path="/job-detail/:id" element={<JobDetail />} />
-        </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
         <Route
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}
         />
+        </Route>
       </Routes>
       <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
       {user && <Footer />}
