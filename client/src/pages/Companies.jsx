@@ -30,6 +30,9 @@ const Companies = () => {
             transform: translateY(-10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
           }
+          .container{
+            padding:50px
+          }
         `}
       </style>
       <Header
@@ -41,21 +44,21 @@ const Companies = () => {
         setLocation={setSearchQuery}
       />
 
-      <div className='container mx-auto flex flex-col gap-5 2xl:gap-10 px-5 md:px-0 py-6 bg-[#f7fdfd]'>
+      <div className='container mx-auto flex flex-col gap-5 2xl:gap-10 px-5 md:px-0 py-6 bg-[#f7fdfd]' >
         <div className='flex items-center justify-between mb-4'>
           <p className='text-sm md:text-base'>
             Showing: <span className='font-semibold'>1,902</span> Companies
             Available
           </p>
 
-          <div className='flex flex-col md:flex-row gap-0 md:gap-2 md:items-center'>
+          <div className='flex flex-col gap-0 md:flex-row md:gap-2 md:items-center'>
             <p className='text-sm md:text-base'>Sort By:</p>
 
             <ListBox sort={sort} setSort={setSort} />
           </div>
         </div>
 
-        <div className='w-full flex flex-col gap-6'>
+        <div className='flex flex-col w-full gap-6 p-10'>
           {data?.map((cmp, index) => (
             <div className="card-hover" key={index}>
               <CompanyCard cmp={cmp} />
@@ -74,7 +77,7 @@ const Companies = () => {
         </div>
 
         {numPage > page && !isFetching && (
-          <div className='w-full flex items-center justify-center pt-16'>
+          <div className='flex items-center justify-center w-full pt-16'>
             <CustomButton
               onClick={handleShowMore}
               title='Load More'
