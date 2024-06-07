@@ -39,9 +39,8 @@ const Footer = () => {
               <h2 className="font-bold mb-3">Company</h2>
               <ul className="space-y-2">
                 <li><Link to="/about" >About Us</Link></li>
-                <li><Link to="/services" >Services</Link></li>
-                <li><Link to="/consultancy" >Consultancy</Link></li>
-                <li><Link to="/testinomial" >Testimonial</Link></li>
+                <li><Link to="/" >Home</Link></li>
+               
               </ul>
             </div>
 
@@ -49,10 +48,9 @@ const Footer = () => {
             <div className="w-full md:w-1/5">
               <h2 className="font-bold mb-3">Support</h2>
               <ul className="space-y-2">
-                <li><Link to="/help-center" >Help Center</Link></li>
-                <li><Link to="/tweet-us" >Tweet Us</Link></li>
-                <li><Link to="/feedback" >Feedback</Link></li>
-                <li><Link to="/webans" >Webans</Link></li>
+                <li><Link to="/company-profile" >Company Profile</Link></li>
+                <li><Link to="/companies" >Companies</Link></li>
+                
               </ul>
             </div>
 
@@ -60,10 +58,7 @@ const Footer = () => {
             <div className="w-full " style={{width:'13%'}}>
               <h2 className="font-bold mb-3">Links</h2>
               <ul className="space-y-2">
-                <li><Link to="/courses">Courses</Link></li>
-                <li><Link to="/become-teacher">Become Teacher</Link></li>
-                <li><Link to="/service">Service</Link></li>
-                <li><Link to="/all-in-one">All in One</Link></li>
+              <li><Link to="/find-jobs" >Find Jobs</Link></li>
               </ul>
             </div>
 
