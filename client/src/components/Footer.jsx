@@ -79,13 +79,13 @@ const Footer = () => {
               &copy; Copyright by Kaam Do .All right reserved.
 
             </p>
-            <div className="flex items-center mt-4 sm:mt-0">
+            {/* <div className="flex items-center mt-4 sm:mt-0">
               <ul style={{display:'flex',color:'white'}}>
                 <li style={{padding:'25px'}}>Privacy Policy</li>
                 <li style={{padding:'25px'}}>Terms of Use</li>
                 <li style={{padding:'25px'}}>Legal</li>
                 <li style={{padding:'25px'}}>Site Map</li>              </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
