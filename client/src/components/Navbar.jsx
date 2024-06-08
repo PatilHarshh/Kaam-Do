@@ -16,15 +16,22 @@ function MenuList({ user, onClick }) {
       <div className="flex">
         <Menu.Button className="flex gap-2 items-center rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-gray-100">
           <div className="flex flex-col items-start">
-            <p className="text-sm font-semibold">{user?.firstName ?? user?.name}</p>
-            <span className="text-sm text-blue-600">{user?.jobTitle ?? user?.email}</span>
+            <p className="text-sm font-semibold">
+              {user?.firstName ?? user?.name}
+            </p>
+            <span className="text-sm text-blue-600">
+              {user?.jobTitle ?? user?.email}
+            </span>
           </div>
-          <img  
+          <img
             src={user?.profileUrl}
             alt="user profile"
             className="w-10 h-10 rounded-full object-cover"
           />
-          <BiChevronDown className="h-8 w-8 text-slate-600" aria-hidden="true" />
+          <BiChevronDown
+            className="h-8 w-8 text-slate-600"
+            aria-hidden="true"
+          />
         </Menu.Button>
       </div>
 
@@ -42,7 +49,9 @@ function MenuList({ user, onClick }) {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  to={`${user?.accountType ? "user-profile" : "company-profile"}`}
+                  to={`${
+                    user?.accountType ? "user-profile" : "company-profile"
+                  }`}
                   className={`${
                     active ? "bg-blue-500 text-white" : "text-gray-900"
                   } group flex items-center rounded-md p-2 text-sm`}
@@ -113,6 +122,9 @@ const Navbar = () => {
             <Link to="/companies">Companies</Link>
           </li>
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            <Link to="/resume">Resume Builder</Link>
+          </li>
+          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             <Link to="/candidates">Candidates</Link>
           </li>
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
@@ -142,24 +154,52 @@ const Navbar = () => {
       </nav>
 
       {/* MOBILE MENU */}
-      <div className={`${isOpen ? "block bg-[#f9f9f9]" : "hidden"} w-full lg:hidden`}>
+      <div
+        className={`${
+          isOpen ? "block bg-[#f9f9f9]" : "hidden"
+        } w-full lg:hidden`}
+      >
         <div className="container mx-auto flex flex-col pl-8 gap-3 py-5">
-          <Link to="/" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+          <Link
+            to="/"
+            onClick={handleCloseNavbar}
+            className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+          >
             Home
           </Link>
-          <Link to="/find-jobs" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+          <Link
+            to="/find-jobs"
+            onClick={handleCloseNavbar}
+            className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+          >
             Find Jobs
           </Link>
-          <Link to="/about" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+          <Link
+            to="/about"
+            onClick={handleCloseNavbar}
+            className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+          >
             About
           </Link>
-          <Link to="/companies" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+          <Link
+            to="/companies"
+            onClick={handleCloseNavbar}
+            className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+          >
             Companies
           </Link>
-          <Link to="/candidates" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+          <Link
+            to="/candidates"
+            onClick={handleCloseNavbar}
+            className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+          >
             Candidates
           </Link>
-          <Link to="/blogs" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+          <Link
+            to="/blogs"
+            onClick={handleCloseNavbar}
+            className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+          >
             Blogs
           </Link>
           <Link
@@ -188,4 +228,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
