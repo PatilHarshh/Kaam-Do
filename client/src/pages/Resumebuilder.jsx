@@ -49,7 +49,7 @@ const Resume = () => {
       {
         category: "Hacking skills",
         details: [
-          "C language, Python , solidity",
+          "C language, ",
           "Instructed a student on building a large program once in an undercover mission when he pretended to be a math teacher",
         ],
       },
@@ -80,7 +80,7 @@ const Resume = () => {
   const handlePrint = () => {
     html2canvas(document.querySelector("article")).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4"); 
+      const pdf = new jsPDF("p", "mm", "a4");
       pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
       pdf.save("resume.pdf");
     });
