@@ -1,4 +1,5 @@
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import {FaXTwitter} from 'react-icons/fa6';
 import { FiInstagram } from "react-icons/fi";
 import { footerLinks } from "../utils/data";
 import { Link } from "react-router-dom";
@@ -72,7 +73,7 @@ const Footer = () => {
             <FaFacebookF />
           </a>
           <a href="#" className="text-2xl hover:text-gray-300">
-            <FaTwitter />
+          <FaXTwitter />
           </a>
           <a href="#" className="text-2xl hover:text-gray-300">
             <FiInstagram />

@@ -6,4 +6,9 @@ export default defineConfig({
     react(),
     // Add other plugins as needed
   ],
+  build: {
+    rollupOptions: {
+      external: ['react-slick']
+    }
+  }
 });
