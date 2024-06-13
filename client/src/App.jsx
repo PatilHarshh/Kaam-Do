@@ -51,7 +51,7 @@ function App() {
   }, [location]);
 
   return (
-    <main className="bg-[#f7fdfd]">
+    <main className="bg-[#f7fdfd] dark:bg-slate-950 dark:text-white">
       <Navbar />
       {loading && <Loader />}
       <Routes>

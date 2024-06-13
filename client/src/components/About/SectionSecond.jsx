@@ -5,7 +5,9 @@ const SectionSecond = () => {
   return (
     <div>
         {/* Second Section */}
-        <Box sx={{ py: 8 }}>
+        <Box sx={{ py: 8 }}
+         className="dark:bg-slate-900"
+         >
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {/* Left Side */}

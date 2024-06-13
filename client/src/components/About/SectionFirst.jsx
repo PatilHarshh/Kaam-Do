@@ -3,7 +3,9 @@ import { Box, Typography } from '@mui/material';
 
 const SectionFirst = () => {
   return (
-    <Box sx={{ backgroundColor: '#FFD8B6', py: 8, textAlign: 'center' }}>
+    <Box sx={{ backgroundColor: '#FFD8B6', py: 8, textAlign: 'center' }}
+    className="dark:bg-slate-800"
+    >
       {/* First Section */}
       <Typography variant="h4" gutterBottom>
         About Us

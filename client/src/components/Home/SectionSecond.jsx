@@ -73,7 +73,7 @@ const SectionSecond = () => {
         {categories.map((category) => (
           <div
             key={category.id}
-            className="card bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden  w-[320px] h-[370px] mx-auto transition-transform duration-300 hover:scale-105"
+            className="card bg-white dark:bg-slate-900 border border-gray-300 rounded-lg shadow-lg overflow-hidden  w-[320px] h-[370px] mx-auto transition-transform duration-300 hover:scale-105"
           >
             <img
               src={category.imageUrl}
@@ -83,8 +83,8 @@ const SectionSecond = () => {
             <div className="p-4 text-center">
               <h2 className="text-xl font-semibold mb-2 ">{category.title}</h2>
                <div  className="flex justify-between items-center">
-              <p className="text-gray-700">{category.positions}</p>
-              <button className="bg-blue-500 text-white px-4 py-1 rounded-lg transition-transform duration-300 hover:bg-blue-600">View</button>
+              <p className="text-gray-700 dark:text-gray-400">{category.positions}</p>
+              <button className="dark:bg-blue-700 bg-blue-500 text-white px-4 py-1 rounded-lg transition-transform duration-300 dark:hover:bg-blue-400 hover:bg-blue-600">View</button>
               </div>
             </div>
           </div>

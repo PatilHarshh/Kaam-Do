@@ -176,13 +176,13 @@ const CompanyProfile = () => {
     <div className='container mx-auto p-5'>
       <div className=''>
         <div className='w-full flex flex-col md:flex-row gap-3 justify-between'>
-          <h2 className='text-gray-600 text-xl font-semibold'>
+          <h2 className='text-gray-600 dark:text-white text-xl font-semibold'>
             Welcome, {info?.name}
           </h2>
 
           {user?.user?.accountType === undefined &&
             info?._id === user?.user?._id && (
-              <div className='flex items-center justifu-center py-5 md:py-0 gap-4'>
+              <div className='flex items-center justify-center py-5 md:py-0 gap-4'>
                 <CustomButton
                   onClick={() => setOpenForm(true)}
                   iconRight={<FiEdit3 />}
@@ -201,19 +201,19 @@ const CompanyProfile = () => {
         </div>
 
         <div className='w-full flex flex-col md:flex-row justify-start md:justify-between mt-4 md:mt-8 text-sm'>
-          <p className='flex gap-1 items-center   px-3 py-1 text-slate-600 rounded-full'>
+          <p className='flex gap-1 items-center   px-3 py-1 text-slate-600 dark:text-slate-300 rounded-full'>
             <HiLocationMarker /> {info?.location ?? "No Location"}
           </p>
-          <p className='flex gap-1 items-center   px-3 py-1 text-slate-600 rounded-full'>
+          <p className='flex gap-1 items-center   px-3 py-1 text-slate-600 dark:text-slate-300 rounded-full'>
             <AiOutlineMail /> {info?.email ?? "No Email"}
           </p>
-          <p className='flex gap-1 items-center   px-3 py-1 text-slate-600 rounded-full'>
+          <p className='flex gap-1 items-center   px-3 py-1 text-slate-600 dark:text-slate-300 rounded-full'>
             <FiPhoneCall /> {info?.contact ?? "No Contact"}
           </p>
 
           <div className='flex flex-col items-center mt-10 md:mt-0'>
             <span className='text-xl'>{info?.jobPosts?.length}</span>
-            <p className='text-blue-600 '>Job Post</p>
+            <p className='text-blue-600 dark:text-blue-300'>Job Post</p>
           </div>
         </div>
       </div>
