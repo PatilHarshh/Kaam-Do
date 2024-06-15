@@ -31,7 +31,14 @@ const Carousel = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/tag/jobs')
+    const apiKey = 'z3qu6zgemnbowzv8sp5fg3evuytv3daigetaomul'; // Replace with your actual API key
+  
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/tag/jobs&api_key=${apiKey}`, {
+      headers: {
+        'Content-Type': 'application/json'
+        // Add other headers if required by the API
+      }
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -47,6 +54,7 @@ const Carousel = () => {
         setLoading(false);
       });
   }, []);
+  
 
   const settings = {
     dots: true,
