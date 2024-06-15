@@ -4,30 +4,26 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [
     react(),
+    // Add other plugins as needed
   ],
   build: {
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 1000, // Increase chunk size warning limit to 1000 kB
     rollupOptions: {
-      external: [
-        'slick-carousel/slick/slick.css',
-        'slick-carousel/slick/slick-theme.css'
-      ],
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
+            // Group dependencies from node_modules into a vendor chunk
             return 'vendor';
+          }
+          // Further split large dependencies into separate chunks if needed
+          if (id.includes('react')) {
+            return 'react';
+          }
+          if (id.includes('lodash')) {
+            return 'lodash';
           }
         }
       }
-    }
-  },
-  server: {
-    fs: {
-      allow: [
-        '..', // Allow serving files from the parent directory
-        './', // Allow serving files from the current directory
-        'node_modules/slick-carousel/slick' // Allow serving files from slick-carousel's directory
-      ]
     }
   }
 });
