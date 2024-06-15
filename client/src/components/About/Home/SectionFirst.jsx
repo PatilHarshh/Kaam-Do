@@ -2,10 +2,12 @@ import React from 'react';
 import { Box, Grid, Typography, TextField, InputAdornment, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import CheckIcon from '@mui/icons-material/Check';
+import clsx from 'clsx';
 
 const SectionFirst = () => {
     return (
-        <Box sx={{ backgroundColor: '#eee6db', minHeight: '100vh', display: 'flex', paddingTop: '2%' }}>
+        <Box sx={{minHeight: '100vh', display: 'flex', paddingTop: '2%' }}
+        className={clsx('bg-orange-100', 'dark:bg-slate-800')}>
             <Grid container sx={{ height: '100%' }}>
                 <Grid
                     item

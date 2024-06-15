@@ -35,25 +35,48 @@ We welcome contributions from new open-source contributors! If you're interested
 
 To get started with Kaam Do, follow these simple steps:
 
-1. Clone the repository: To get started with contributing to our project, fork the repository and then clone it to your local machine
+1. To get started with contributing to our project, fork the repository at-https://github.com/PatilHarshh/Kaam-Do to your account.
+
+2. Then Clone the repository by running this command in your local machine.
    ```bash
    git clone https://github.com/your-username/kaam-do.git
    
-2. Change the directory to Client and Install required Packages
+3. Change the directory to Client, Install required Packages and run frontend server
      ```bash
       cd client
       npm install
+      npm run dev
    ```
-3. Make Your Changes: Make the necessary modifications or additions to the project files.
 
-4. Commit and Push Once you've made your changes, commit them and push to your fork:
+### **ENV Variables**
+* Make a env file in the server directory and Setup your port and Mongodb url.
+   <br>
+   Example can be:-
+   ```
+   Port=3000
+   MONGO_URI="mongodb://localhost:27017/yourdatabase_name"
+   ```
+   ##### Default Port=8080
+
+4. Change the directory to Client, Install required Packages and run backend server
+     ```bash
+      cd server
+      npm install
+      node --watch server.js
+   ```
+
+### Contributions
+
+5. Make Your Changes: Make the necessary modifications or additions to the project files.
+
+6. Commit and Push Once you've made your changes, commit them and push to your fork:
    ```bash
     git add .
     git commit -m "Describe your changes here"
     git push
    ```
 
-5. Create a Pull Request:
+7. Create a Pull Request:
    Navigate back to the original repository and open a pull request from your forked repository.
 
 ## Code Of Conduct: 🤝

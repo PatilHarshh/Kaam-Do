@@ -42,7 +42,7 @@ const Header = ({
   setLocation,
 }) => {
   return (
-    <div className='bg-[#f7fdfd]'>
+    <div className='bg-[#f7fdfd] dark:bg-slate-950'>
       <div
         className={`container mx-auto px-5 ${
           type ? "h-[500px]" : "h-[350px]"
@@ -50,10 +50,10 @@ const Header = ({
       >
         <div className='w-full z-10'>
           <div className='mb-8'>
-            <p className='text-slate-700 font-bold text-4xl'>{title}</p>
+            <p className='text-slate-700 dark:text-white font-bold text-4xl'>{title}</p>
           </div>
 
-          <div className='w-full flex items-center justify-around bg-white px-2 md:px-5 py-2.5 md:py-4 shadow-2xl rounded-full'>
+          <div className='w-full flex items-center justify-around bg-white dark:bg-gray-300 px-2 md:px-5 py-2.5 md:py-4 shadow-2xl rounded-full'>
             <SearchInput
               placeholder='Job Title or Keywords'
               icon={<AiOutlineSearch className='text-gray-600 text-xl' />}
