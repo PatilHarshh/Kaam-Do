@@ -44,7 +44,7 @@ const Companies = () => {
         setLocation={setSearchQuery}
       />
 
-      <div className='container mx-auto flex flex-col gap-5 2xl:gap-10 px-5 md:px-0 py-6 bg-[#f7fdfd]' >
+      <div className='container mx-auto flex flex-col gap-5 2xl:gap-10 px-5 md:px-0 py-6 bg-[#f7fdfd] dark:bg-slate-800' >
         <div className='flex items-center justify-between mb-4'>
           <p className='text-sm md:text-base'>
             Showing: <span className='font-semibold'>1,902</span> Companies
@@ -54,7 +54,7 @@ const Companies = () => {
           <div className='flex flex-col gap-0 md:flex-row md:gap-2 md:items-center'>
             <p className='text-sm md:text-base'>Sort By:</p>
 
-            <ListBox sort={sort} setSort={setSort} />
+            <ListBox sort={sort} setSort={setSort} sx={{ color: 'red' }}/>
           </div>
         </div>
 

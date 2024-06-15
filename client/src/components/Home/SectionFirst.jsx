@@ -5,7 +5,9 @@ import CheckIcon from '@mui/icons-material/Check';
 
 const SectionFirst = () => {
     return (
-        <Box sx={{ backgroundColor: '#eee6db', minHeight: '100vh', display: 'flex', paddingTop: '2%' }}>
+        <Box sx={{ backgroundColor: '#eee6db', minHeight: '100vh', display: 'flex', paddingTop: '2%' }}
+        className="dark:bg-slate-800"
+        >
             <Grid container sx={{ height: '100%' }}>
                 <Grid
                     item
@@ -49,19 +51,19 @@ const SectionFirst = () => {
                     <List sx={{ marginTop: 4 }}>
                         <ListItem>
                             <ListItemIcon>
-                                <CheckIcon />
+                                <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
                             <ListItemText primary="Wide range of job categories" />
                         </ListItem>
                         <ListItem>
                             <ListItemIcon>
-                                <CheckIcon />
+                                <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
                             <ListItemText primary="Flexible working hours" />
                         </ListItem>
                         <ListItem>
                             <ListItemIcon>
-                                <CheckIcon />
+                                <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
                             <ListItemText primary="Remote work options" />
                         </ListItem>
