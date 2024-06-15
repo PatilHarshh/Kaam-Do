@@ -7,7 +7,7 @@ import { AiOutlineClose, AiOutlineLogout } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
 import { useSelector } from "react-redux";
-import DarkMode from "./DarkMode/DarkMode.jsX";
+import DarkMode from "./DarkMode/DarkMode.jsx";
 
 function MenuList({ user, onClick }) {
   const handleLogout = () => {};
