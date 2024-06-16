@@ -7,6 +7,7 @@ import { AiOutlineClose, AiOutlineLogout } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
 import { useSelector } from "react-redux";
+import DarkMode from "./DarkMode/DarkMode.jsx";
 
 function MenuList({ user, onClick }) {
   const handleLogout = () => {};
@@ -14,7 +15,7 @@ function MenuList({ user, onClick }) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div className="flex">
-        <Menu.Button className="flex gap-2 items-center rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-gray-100">
+        <Menu.Button className="flex gap-2 items-center rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-700 dark:text-white hover:bg-gray-100">
           <div className="flex flex-col items-start">
             <p className="text-sm font-semibold">{user?.firstName ?? user?.name}</p>
             <span className="text-sm text-blue-600">{user?.jobTitle ?? user?.email}</span>
@@ -93,13 +94,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 w-full bg-[#f9f9f9] z-50 shadow-md">
+    <div className="sticky top-0 w-full bg-[#f9f9f9] dark:bg-slate-800 z-50 shadow-md">
       <nav className="container mx-auto flex items-center justify-between p-5">
         <Link to="/" className="text-orange-600 font-bold text-xl">
           Kaam<span className="text-[#fb923c]">Do</span>
         </Link>
 
-        <ul className="hidden lg:flex gap-10 text-base text-gray-700">
+        <ul className="hidden lg:flex gap-10 text-base text-gray-700 dark:text-white">
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             <Link to="/">Home</Link>
           </li>
@@ -119,7 +120,6 @@ const Navbar = () => {
             <Link to="/blogs">Blogs</Link>
           </li>
         </ul>
-
         <div className="hidden lg:block">
           {!user?.token ? (
             <Link to="/user-auth">
@@ -132,7 +132,7 @@ const Navbar = () => {
             <MenuList user={user} />
           )}
         </div>
-
+        <DarkMode/>
         <button
           className="block lg:hidden text-slate-900"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -142,7 +142,7 @@ const Navbar = () => {
       </nav>
 
       {/* MOBILE MENU */}
-      <div className={`${isOpen ? "block bg-[#f9f9f9]" : "hidden"} w-full lg:hidden`}>
+      <div className={`${isOpen ? "block bg-[#f9f9f9] dark:bg-slate-900" : "hidden"} w-full lg:hidden`}>
         <div className="container mx-auto flex flex-col pl-8 gap-3 py-5">
           <Link to="/" onClick={handleCloseNavbar} className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             Home
@@ -174,7 +174,7 @@ const Navbar = () => {
               <Link to="/user-auth">
                 <CustomButton
                   title="Sign In"
-                  containerStyles="text-blue-600 py-1.5 px-5 focus:outline-none hover:bg-blue-700 hover:text-white rounded-full text-base border border-blue-600"
+                  className="text-blue-600 py-1.5 px-5 focus:outline-none hover:bg-blue-700 hover:text-white rounded-full text-base border border-blue-600 dark:border-blue-200"
                 />
               </Link>
             ) : (

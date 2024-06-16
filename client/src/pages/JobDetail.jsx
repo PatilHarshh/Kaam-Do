@@ -21,7 +21,7 @@ const JobDetail = () => {
     <div className='container mx-auto'>
       <div className='w-full flex flex-col md:flex-row gap-10'>
         {/* LEFT SIDE */}
-        <div className='w-full h-fit md:w-2/3 2xl:2/4 bg-white px-5 py-10 md:px-10 shadow-md'>
+        <div className='w-full h-fit md:w-2/3 2xl:2/4 bg-white dark:bg-slate-800 px-5 py-10 md:px-10 shadow-md'>
           <div className='w-full flex items-center justify-between'>
             <div className='w-3/4 flex gap-2'>
               <img
@@ -31,13 +31,13 @@ const JobDetail = () => {
               />
 
               <div className='flex flex-col'>
-                <p className='text-xl font-semibold text-gray-600'>
+                <p className='text-xl font-semibold text-gray-600 dark:text-white'>
                   {job?.jobTitle}
                 </p>
 
                 <span className='text-base'>{job?.location}</span>
 
-                <span className='text-base text-blue-600'>
+                <span className='text-base text-blue-600 dark:text-blue-200'>
                   {job?.company?.name}
                 </span>
 
@@ -53,30 +53,30 @@ const JobDetail = () => {
           </div>
 
           <div className='w-full flex flex-wrap md:flex-row gap-2 items-center justify-between my-10'>
-            <div className='bg-[#bdf4c8] w-40 h-16 rounded-lg flex flex-col items-center justify-center'>
+            <div className='bg-[#bdf4c8] dark:bg-green-900 w-40 h-16 rounded-lg flex flex-col items-center justify-center'>
               <span className='text-sm'>Salary</span>
-              <p className='text-lg font-semibold text-gray-700'>
+              <p className='text-lg font-semibold text-gray-700 dark:text-white'>
                 $ {job?.salary}
               </p>
             </div>
 
-            <div className='bg-[#bae5f4] w-40 h-16 rounded-lg flex flex-col items-center justify-center'>
+            <div className='bg-[#bae5f4] dark:bg-blue-900 w-40 h-16 rounded-lg flex flex-col items-center justify-center'>
               <span className='text-sm'>Job Type</span>
-              <p className='text-lg font-semibold text-gray-700'>
+              <p className='text-lg font-semibold text-gray-700 dark:text-white'>
                 {job?.jobType}
               </p>
             </div>
 
-            <div className='bg-[#fed0ab] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center'>
-              <span className='text-sm'>No. of Applicants</span>
-              <p className='text-lg font-semibold text-gray-700'>
+            <div className='bg-[#fed0ab] dark:bg-orange-800 w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center'>
+              <span className='text-sm'>No.of Applicants</span>
+              <p className='text-lg font-semibold text-gray-700 dark:text-white'>
                 {job?.applicants?.length}K
               </p>
             </div>
 
-            <div className='bg-[#cecdff] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center'>
+            <div className='bg-[#cecdff] dark:bg-purple-900 w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center'>
               <span className='text-sm'>No. of Vacancies</span>
-              <p className='text-lg font-semibold text-gray-700'>
+              <p className='text-lg font-semibold text-gray-700 dark:text-white'>
                 {job?.vacancies}
               </p>
             </div>

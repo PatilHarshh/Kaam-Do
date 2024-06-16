@@ -3,7 +3,9 @@ import { Box, Button, Card, CardContent, Container, Grid, Typography } from '@mu
 
 const SectionThird = () => {
     return (
-        <Box sx={{ backgroundColor: '#FFD8B6', py: 8, textAlign: 'center' }}>
+        <Box sx={{ backgroundColor: '#FFD8B6', py: 8, textAlign: 'center' }}
+        className="dark:bg-slate-800"
+        >
             {/* Third Section */}
             <Container>
                 <Typography variant="h4" gutterBottom>

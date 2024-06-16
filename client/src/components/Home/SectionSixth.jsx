@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Grid, Typography, Card, CardContent, CardMedia, Container } from '@mui/material';
+import clsx from 'clsx';
 
 const SectionFifth = () => {
+
   // Example data for four featured cities
   const cities = [
     {
@@ -44,16 +46,16 @@ const SectionFifth = () => {
             }
           `}
         </style>
-        <Typography variant="h4" align="left" gutterBottom>
+        <Typography variant="h4" align="left" gutterBottom className='dark:text-white'>
           Featured Cities
         </Typography>
-        <Typography variant="body2" align="left" color="textSecondary" sx={{ mb: 4 }}>
+        <Typography variant="body2" align="left" className={clsx('text-gray-400', 'dark:text-gray-300')} sx={{ mb: 4 }}>
           Start your next career in a beautiful city
         </Typography>
         <Grid container spacing={3} justifyContent="center">
           {cities.map(city => (
             <Grid item key={city.id} xs={12} sm={6} md={3}>
-              <Card className="card-hover" sx={{ backgroundColor: '#e3f2fd', borderRadius: 10, height: '100%' }}>
+              <Card className="card-hover dark:bg-blue-950" sx={{ backgroundColor: '#e3f2fd', borderRadius: 10, height: '100%' }}>
                 <CardMedia
                   component="img"
                   height="200"
@@ -62,10 +64,12 @@ const SectionFifth = () => {
                   sx={{ borderTopLeftRadius: 10, borderTopRightRadius: 10, objectFit: 'cover' }}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h6" color="primary" gutterBottom>
+                  <Typography variant="h6" gutterBottom
+                  className={clsx('text-blue-700', 'dark:text-blue-200')}
+                  >
                     {city.name}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary">
+                  <Typography variant="body2" className={clsx('text-gray-400', 'dark:text-gray-300')}>
                     {city.openPositions} open positions
                   </Typography>
                 </CardContent>

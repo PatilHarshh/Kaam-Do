@@ -10,14 +10,14 @@ const Footer = () => {
     <footer className="">
 
 
-      <div className="bg-[#eee6db] pt-20 ">
+      <div className="bg-[#eee6db] pt-20 dark:bg-slate-900 ">
         <div className="container px-5 py-10 mx-auto pb-20">
           <div className="flex flex-wrap justify-between gap-10">
             {/* Column 1 */}
             <div className="w-full md:w-1/5">
               <Link to="/" className="text-orange-600 font-bold text-xl">
                 Kaam<span className="text-[#fb923c]">Do</span>
-              </Link>              <p className="mt-4 text-gray-600">
+              </Link>              <p className="mt-4 text-gray-600 dark:text-gray-400">
                 KaamDo is your ultimate platform for finding jobs and connecting with companies. We aim to simplify job searching and hiring processes.
               </p>
               <div className="flex mt-4 space-x-4">
@@ -75,9 +75,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="bg-[#001a36] py-4">
+        <div className="bg-orange-100 dark:bg-slate-950 py-4">
           <div className="container mx-auto flex flex-wrap flex-col sm:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm text-center sm:text-left">
+            <p className="text-gray-600 dark:text-gray-400 text-sm text-center sm:text-left">
               &copy; Copyright by Kaam Do .All right reserved.
 
             </p>
