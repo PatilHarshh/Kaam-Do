@@ -93,6 +93,8 @@ const ContactForm = () => {
         >
           Submit
         </button>
+        <br/>
+        <br/>
       </form>
     </div>
   );
