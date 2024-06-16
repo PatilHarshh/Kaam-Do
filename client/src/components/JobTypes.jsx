@@ -23,10 +23,10 @@ export default function JobTypes() {
   return (
     <div className="w-full ">
       <Listbox value={jobTitle} onChange={setJobTitle}>
-        <div className="relative">
-          <Listbox.Button className="relative w-full cursor-default rounded bg-white py-2.5 pl-3 pr-10 text-left focus:outline-none border border-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500  sm:text-sm">
-            <span className="block truncate">{jobTitle}</span>
-            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+          <div className='relative'>
+          <Listbox.Button className='relative w-full cursor-default rounded bg-white dark:bg-slate-800 py-2.5 pl-3 pr-10 text-left focus:outline-none border border-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500  sm:text-sm'>
+            <span className='block truncate'>{jobTitle}</span>
+            <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
               <BsChevronExpand
                 className="h-5 w-5 text-gray-500"
                 aria-hidden="true"
