@@ -8,6 +8,7 @@ import {
   JobDetail,
   UploadJob,
   UserProfile,
+  Carousel
 } from "./pages";
 import { useSelector } from "react-redux";
 
@@ -71,6 +72,7 @@ function App() {
             }
           />
           <Route path='/companies' element={<Companies />} />
+          <Route path='/blogs' element={<Carousel />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route
             path={
