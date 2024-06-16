@@ -7,65 +7,64 @@ const Resume = () => {
   const [isCtrlDown, setIsCtrlDown] = useState(false);
   const [resumeContent] = useState({
     personalInfo: {
-      tel: "(917) 285-7362",
-      name: "Mukilan T",
-      nickname: "Muki",
-      email: "mukilan2808@gmail.com",
+      tel: "(000) 000-0000",
+      name: "John Doe",
+      nickname: "JD",
+      email: "johndoe@example.com",
     },
     workExperience: [
       {
-        company: "N/A",
-        position: "Billionaire",
-        years: "??? - 2016",
+        company: "XYZ Corporation",
+        position: "Senior Software Engineer",
+        years: "2016 - Present",
         location: "New York",
         description:
-          "His source of wealth is unknown yet reliable. Develop an all-seeing AI:\n- Taught the Machine to save everyone\n- Taught the Machine how to play chess\nSave the irrelevant numbers:\n- Identify the irrelevant number as victim or perpetrator\n- Saved everyone\n- Failed to save himself",
+          "Leading projects on AI development:\n- Developed an all-seeing AI system\n- Implemented chess-playing AI\nSaved lives and prevented crises:\n- Identified and helped victims\n- Implemented financial aid initiatives\n- Contributed to disaster prevention",
       },
       {
-        company: "Universal Heritage Insurance",
+        company: "Universal Insurance Group",
         position: "Insurance Underwriter",
-        years: "??? - 2016",
+        years: "2012 - 2016",
         location: "New York",
         description:
-          "An insurance company. Work as an investigator:\n- Approach families of the numbers and collect relevant information, sometimes provide anonymous financial aid\nSave the irrelevant numbers:\n- Identify the irrelevant number as victim or perpetrator",
+          "Investigated insurance claims:\n- Gathered information and provided support to families\nContributed to community welfare:\n- Identified and assisted individuals in need",
       },
       {
-        company: "IFT, Inc.",
+        company: "ABC Tech Solutions",
         position: "Software Engineer",
-        years: "1983 - 2011",
+        years: "2006 - 2012",
         location: "New York",
         description:
-          "This company receives a reputation as a world leader in computer technology. Work as a low-level employee:\n- Pretend to be inefficient in coding\n- Constantly disappearing from work\nSecretly being a high level executive:\n- Hired someone secretly(219)\n- Fired himself secretly(102)",
+          "Contributed to technological advancements:\n- Played a key role in coding projects\n- Managed projects efficiently\nMaintained secrecy in management:\n- Handled hiring and firing discretely",
       },
     ],
     education: {
-      school: "Massachusetts Institute of Technology",
-      degree: "Engineering",
-      years: "1980 - 1983",
-      location: "Cambridge, MA",
-      highlights: ["Dropout"],
+      school: "University",
+      degree: "Computer Science",
+      years: "2002 - 2006",
+      location: "Anytown, USA",
+      highlights: ["Bachelor's Degree"],
     },
     skills: [
       {
-        category: "Hacking skills",
+        category: "Programming",
         details: [
-          "C language, ",
-          "Instructed a student on building a large program once in an undercover mission when he pretended to be a math teacher",
+          "C/C++, Java, Python",
+          "Experience in building large-scale systems",
         ],
       },
       {
-        category: "Financial knowledge",
+        category: "Finance",
         details: [
-          "Expert in stock market manipulation",
-          "Short sold a medical company's stocks",
-          "Prevented a financial crisis in a stock exchange",
+          "Knowledgeable in stock market analysis",
+          "Experience in crisis management",
         ],
       },
       {
-        category: "People skills",
+        category: "Communication",
         details: [
-          "Compassion and selfless love",
-          '"Human-interaction" is said to not be his best strength, however Finch has demonstrated his kindness and caring for all man-kind, including those posing against him',
+          "Strong interpersonal skills",
+          "Ability to handle diverse situations with compassion",
         ],
       },
     ],
