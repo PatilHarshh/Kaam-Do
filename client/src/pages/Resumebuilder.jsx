@@ -98,9 +98,36 @@ const Resume = () => {
         boxShadow: "gray 1px 1px 3px 2px",
         overflow: "hidden",
       }}
-      title="This is a sample resume. Click to edit. Use Tab key to go to next input box. You can add/remove any element you like. Press CTRL+P to save as PDF!"
+      title="This is a sample resume. Click to edit. You can add/remove any element you like. Press CTRL+P to save as PDF!"
     >
-      <div id="addDropBtn">
+      <div className="instructions">
+        <style jsx>{`
+          .instructions {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+          }
+
+          .instructions h3 {
+            margin-top: 0;
+            font-size: 20px;
+          }
+
+          .instructions ol {
+            padding-left: 20px;
+          }
+        `}</style>
+        <h3>Instructions</h3>
+        <ol>
+          <li>Click on any field to edit the content.</li>
+          <li>You can add or remove any element you like.</li>
+          <li>
+            Press CTRL+P or Download PDF button to save the resume as a PDF
+            file.
+          </li>
+        </ol>
+      </div>
+      <div id="addDropBtn" tabIndex="-1">
         <div id="dropBtn" onClick={handlePrint}>
           Download PDF
         </div>
@@ -205,8 +232,7 @@ const Resume = () => {
           </div>
         ))}
       </article>
-
-      <div className="resume-buttons">
+      <div className="resume-buttons" tabIndex="-1">
         <div className="button" onClick={handlePrint}>
           Download PDF
         </div>
