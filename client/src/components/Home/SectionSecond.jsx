@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const SectionSecond = () => {
   // Sample data for categories
@@ -61,39 +61,62 @@ const SectionSecond = () => {
     },
   ];
 
-  return (
-    
-    <div className=" container mx-auto py-8">
-      <h3 className="text-center  font-bold text-3xl mb-6">
-        Search by Category
-      </h3>
-      <p  className="text-center  underline font-semibold text-sm mb-8 text-gray-700"> Search your career opportunity with our categories</p>
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState(categories);
 
-      <div className="grid  sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {categories.map((category) => (
-          <div
-            key={category.id}
-            className="card bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden  w-[320px] h-[370px] mx-auto transition-transform duration-300 hover:scale-105"
-          >
-            <img
-              src={category.imageUrl}
-              alt={category.title}
-              className="w-full h-[250px] object-cover"
-            />
-            <div className="p-4 text-center">
-              <h2 className="text-xl font-semibold mb-2 ">{category.title}</h2>
-               <div  className="flex justify-between items-center">
-              <p className="text-gray-700">{category.positions}</p>
-              <button className="bg-blue-500 text-white px-4 py-1 rounded-lg transition-transform duration-300 hover:bg-blue-600">View</button>
+  useEffect(() => {
+    const trimmedInput = searchInput.trim().toLowerCase();
+    const results = categories.filter(
+      (category) => category.title.toLowerCase().includes(trimmedInput)
+    );
+    setSearchResults(results);
+  }, [searchInput]);
+
+  return (
+    <div className="container mx-auto py-8">
+      <h3 className="text-center font-bold text-3xl mb-6">Search by Category</h3>
+      <p className="text-center underline font-semibold text-sm mb-8 text-gray-700">
+        Search your career opportunity with our categories
+      </p>
+
+       <div className="text-center mb-6">
+        <input
+          type="text"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          className="border border-gray-300 rounded-lg px-4 py-2 mr-2"
+          placeholder="Enter category name"
+        />
+      </div>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {searchResults.length > 0 ? (
+          searchResults.map((category) => (
+            <div
+              key={category.id}
+              className="card bg-white dark:bg-slate-900 border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[320px] h-[370px] mx-auto transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src={category.imageUrl}
+                alt={category.title}
+                className="w-full h-[250px] object-cover"
+              />
+              <div className="p-4 text-center">
+                <h2 className="text-xl font-semibold mb-2">{category.title}</h2>
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-700 dark:text-gray-400">{category.positions}</p>
+                  <button className="bg-blue-500 text-white px-4 py-1 rounded-lg transition-transform duration-300 hover:bg-blue-600">
+                    View
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-     
-        ))}
+          ))
+        ) : (
+          <p className="text-center text-red-500">Item not found</p>
+        )}
       </div>
     </div>
-  
-
   );
 };
 

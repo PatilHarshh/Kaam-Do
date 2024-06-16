@@ -3,7 +3,9 @@ import { Box, Button, Container, Typography, Divider, Grid } from '@mui/material
 
 const SectionFourth = () => {
     return (
-        <Box sx={{ backgroundColor: '#eee6db', py: 8, textAlign: 'center' }}>
+        <Box sx={{ backgroundColor: '#eee6db', py: 8, textAlign: 'center' }}
+        className="dark:bg-slate-800"
+        >
             <Typography variant="h4" gutterBottom>
                 We're Hiring!
             </Typography>

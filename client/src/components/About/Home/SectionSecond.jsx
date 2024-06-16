@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography, Card, CardContent, CardMedia, Container } from '@mui/material';
+import clsx from 'clsx';
 
 const SectionSecond = () => {
   // Sample data for categories
@@ -22,7 +23,7 @@ const SectionSecond = () => {
         <Typography variant="h4" align="left" gutterBottom>
           Search by Category
         </Typography>
-        <Typography variant="body2" align="left" color="textSecondary">
+        <Typography variant="body2" align="left" className={clsx('text-gray-300', 'dark:text-gray-100')}>
           Search your career opportunity with our categories
         </Typography>
         <Grid container spacing={3} justifyContent="center" sx={{ mt: 4 }}>
@@ -34,7 +35,7 @@ const SectionSecond = () => {
                   height="200"
                   image={category.imageUrl}
                   alt={category.title}
-                  sx={{ borderRadius: '50%', backgroundColor: '#FFDAB9' }}
+                  sx={{ borderRadius: '50%', backgroundColor: 'black' }}
                 />
                 <CardContent>
                   <Typography variant="h5" align="center"  gutterBottom sx={{color:'black'}}>

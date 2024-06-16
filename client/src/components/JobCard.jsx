@@ -6,7 +6,7 @@ const JobCard = ({ job }) => {
   return (
     <Link to={`/job-detail/${job?.id}`}>
       <div
-        className='w-full md:w-[16rem] 2xl:w-[18rem] h-[16rem] md:h-[18rem] bg-white flex flex-col justify-between shadow-lg 
+        className='w-full md:w-[16rem] 2xl:w-[18rem] h-[16rem] md:h-[18rem] bg-white dark:bg-slate-900 flex flex-col justify-between shadow-lg 
                 rounded-md px-3 py-5 '
       >
         <div className='flex gap-3'>
@@ -19,7 +19,7 @@ const JobCard = ({ job }) => {
           <div className=''>
             <p className='text-lg font-semibold truncate'>{job?.jobTitle}</p>
             <span className='flex gap-2 items-center'>
-              <GoLocation className='text-slate-900 text-sm' />
+              <GoLocation className='text-slate-900 dark:text-slate-300 text-sm' />
               {job?.location}
             </span>
           </div>

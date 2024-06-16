@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography, Card, CardContent, CardMedia, Container } from '@mui/material';
+import clsx from 'clsx';
 
 const SectionFourth = () => {
   // Example data for three companies
@@ -41,16 +42,16 @@ const SectionFourth = () => {
             }
           `}
         </style>
-        <Typography variant="h4" align="left" gutterBottom color="black">
+        <Typography variant="h4" align="left" gutterBottom className={clsx('text-black', 'dark:text-white')}>
           Find Best Companies
         </Typography>
-        <Typography variant="body2" align="left" color="textSecondary" sx={{ mb: 4 }}>
+        <Typography variant="body2" align="left" className={clsx('text-gray-400', 'dark:text-gray-300')} sx={{ mb: 4 }}>
           Work for the best companies in the world
         </Typography>
         <Grid container spacing={3} justifyContent="center">
           {companies.map(company => (
             <Grid item key={company.id} xs={12} sm={6} md={4}>
-              <Card className="card-hover" sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <Card className="card-hover dark:bg-blue-950" sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <CardMedia
                   component="img"
                   height="150"
@@ -59,13 +60,13 @@ const SectionFourth = () => {
                   sx={{ objectFit: 'cover' }}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h6" color="primary" gutterBottom>
+                  <Typography variant="h6" className={clsx('text-blue-700', 'dark:text-blue-200')} gutterBottom>
                     {company.name}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary">
+                  <Typography variant="body2" className={clsx('text-gray-400', 'dark:text-gray-300')}>
                     {company.description}
                   </Typography>
-                  <Typography variant="body2" color="black" sx={{ mt: 1 }}>
+                  <Typography variant="body2" className={clsx('text-black', 'dark:text-gray-400')} sx={{ mt: 1 }}>
                     {company.jobs} jobs available
                   </Typography>
                 </CardContent>

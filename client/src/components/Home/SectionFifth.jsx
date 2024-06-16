@@ -1,11 +1,20 @@
-import React from 'react';
-import { Box, Typography, Grid, TextField, Button, Container, InputAdornment } from '@mui/material';
+import React from "react";
+import {
+  Box,
+  Typography,
+  Grid,
+  TextField,
+  Button,
+  Container,
+  InputAdornment,
+} from "@mui/material";
+import clsx from "clsx";
 
 const SectionSixth = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle subscription logic here
-    console.log('Subscribe button clicked!');
+    console.log("Subscribe button clicked!");
   };
 
   return (
@@ -14,32 +23,63 @@ const SectionSixth = () => {
         <Typography variant="h4" align="center" gutterBottom>
           Stay Up to Date
         </Typography>
-        <Typography variant="body2" align="center" color="textSecondary" sx={{ mb: 4 }}>
+        <Typography
+          variant="body2"
+          align="center"
+          className={clsx("text-gray-400", "dark:text-gray-300")}
+          sx={{ mb: 4 }}
+        >
           Subscribe to our newsletter to receive our weekly feed
         </Typography>
         <Grid container spacing={3} alignItems="center" justifyContent="center">
-          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <img
               src="https://www.shutterstock.com/image-vector/young-good-looking-man-using-600nw-1959667441.jpg"
               alt="Newsletter"
-              style={{ maxWidth: '100%', borderRadius: 10 }}
+              style={{ maxWidth: "100%", borderRadius: 10 }}
             />
           </Grid>
-          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
               <TextField
                 variant="outlined"
                 placeholder="Enter your email"
                 fullWidth
-                sx={{ mb: 2, borderRadius: 20 }}
+                sx={{
+                    borderColor:'lightgrey',
+                    borderRadius: 4
+                }}
+                className={clsx("dark:bg-gray-500", "dark:border-gray-600")}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
                       <Button
                         variant="contained"
-                        color="primary"
+                        className={clsx(
+                          "bg-blue-500",
+                          "dark:bg-blue-300",
+                          "text-white",
+                          "dark:hover:text-white",
+                          "dark:text-blue-900"
+                        )}
                         onClick={handleSubmit}
-                        sx={{ borderRadius: 10, textTransform: 'none', color: 'white' }}
+                        sx={{ borderRadius: 20, textTransform: "none" }}
                       >
                         Subscribe
                       </Button>

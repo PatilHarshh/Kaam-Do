@@ -8,6 +8,7 @@ import {
   JobDetail,
   UploadJob,
   UserProfile,
+  Carousel
 } from "./pages";
 import { useSelector } from "react-redux";
 
@@ -52,7 +53,7 @@ function App() {
   }, [location]);
 
   return (
-    <main className="bg-[#f7fdfd]">
+    <main className="bg-[#f7fdfd] dark:bg-slate-950 dark:text-white">
       <Navbar />
       {loading && <Loader />}
       <Routes>
@@ -71,7 +72,9 @@ function App() {
               </>
             }
           />
-          <Route path="/companies" element={<Companies />} />
+
+          <Route path='/companies' element={<Companies />} />
+          <Route path='/blogs' element={<Carousel />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route
             path={
