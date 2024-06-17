@@ -11,6 +11,7 @@ const Feedback = ({ showModal, closeModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Updated this route as required, the below route works if backend is running at port 3000
       const response = await fetch('http://localhost:3000/feedback/createFeedback', {
         method: 'POST',
         headers: {
