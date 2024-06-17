@@ -71,8 +71,18 @@ const Resume = () => {
   });
 
   const handleKeyDown = (e) => {
-    if (e.keyCode === 17) {
+    if (e.key === "Control") {
       setIsCtrlDown(true);
+    }
+    if (isCtrlDown && e.key === "p") {
+      e.preventDefault();
+      handlePrint();
+    }
+  };
+
+  const handleKeyUp = (e) => {
+    if (e.key === "Control") {
+      setIsCtrlDown(false);
     }
   };
 
@@ -85,14 +95,9 @@ const Resume = () => {
     });
   };
 
-  const handleKeyUp = (e) => {
-    if (e.keyCode === 17) {
-      setIsCtrlDown(false);
-    }
-  };
-
   return (
     <section
+      className="resume-section"
       style={{
         borderRadius: "4px",
         boxShadow: "gray 1px 1px 3px 2px",
@@ -101,22 +106,6 @@ const Resume = () => {
       title="This is a sample resume. Click to edit. You can add/remove any element you like. Press CTRL+P to save as PDF!"
     >
       <div className="instructions">
-        <style jsx>{`
-          .instructions {
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin-bottom: 20px;
-          }
-
-          .instructions h3 {
-            margin-top: 0;
-            font-size: 20px;
-          }
-
-          .instructions ol {
-            padding-left: 20px;
-          }
-        `}</style>
         <h3>Instructions</h3>
         <ol>
           <li>Click on any field to edit the content.</li>

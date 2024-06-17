@@ -21,7 +21,7 @@ function DarkMode() {
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-
+    
   return (
     <div>
       <button className="dark:bg-white flex items-center justify-center p-1 text-black rounded-xl dark:text-white" onClick={handleThemeSwitch}>
