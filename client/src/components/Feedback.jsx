@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../../public/styles/ratingStars.css"
+import "../assets/feedback-form.css"
 
 const Feedback = ({ showModal, closeModal }) => {
   
