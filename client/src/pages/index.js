@@ -6,6 +6,7 @@ import CompanyProfile from "./CompanyProfile";
 import UploadJob from "./UploadJob";
 import About from "./About";
 import JobDetail from "./JobDetail";
+import Resume from "./Resumebuilder";
 import Carousel from "./blogs";
 
 export {
@@ -16,6 +17,7 @@ export {
   CompanyProfile,
   UploadJob,
   About,
+  Resume,
   JobDetail,
   Carousel
 };
