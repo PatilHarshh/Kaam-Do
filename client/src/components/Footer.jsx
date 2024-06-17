@@ -1,17 +1,23 @@
+import React, {useState} from 'react';
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import Feedback from "./Feedback.jsx"
 import TextInput from "./TextInput";
 import CustomButton from "./CustomButton";
 
 const Footer = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
   return (
     <footer className="">
 
 
-      <div className="bg-[#eee6db] pt-20 dark:bg-slate-900 ">
-        <div className="container px-5 py-10 mx-auto pb-20">
+      <div className="bg-[#eee6db] pt-5 dark:bg-slate-900 ">
+        <div className="container  relative  px-5 py-10 mx-auto pb-20">
           <div className="flex flex-wrap justify-between gap-10">
             {/* Column 1 */}
             <div className="w-full md:w-1/5">
@@ -71,7 +77,15 @@ const Footer = () => {
                 <li>Phone: (123) 456-7890</li>
                 <li>Email: info@example.com</li>
               </ul>
+            
             </div>
+            
+            <div className="feedback-button">
+              <button className="absolute bottom-5 right-10 bg-orange-400 text-white font-bold py-2 px-4 transform rotate-90 origin-bottom-right" onClick={openModal}>
+                  Give Feedback
+              </button>
+            </div>
+            <Feedback showModal={showModal} closeModal={closeModal} />
           </div>
         </div>
 
