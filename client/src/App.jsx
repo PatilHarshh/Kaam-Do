@@ -11,7 +11,7 @@ import {
   Carousel
 } from "./pages";
 import { useSelector } from "react-redux";
-
+import Error from './components/Error'
 import SectionFirst from "./components/Home/SectionFirst";
 import SectionSecond from "./components/Home/SectionSecond";
 import SectionThird from "./components/Home/SectionThird";
@@ -93,6 +93,7 @@ function App() {
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}
         />
+        <Route path='/*' element={<Error />} />
       </Routes>
       <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
       {user && <Footer />}
