@@ -19,6 +19,7 @@ import SectionFourth from "./components/Home/SectionFourth";
 import SectionFifth from "./components/Home/SectionFifth";
 import SectionSixth from "./components/Home/SectionSixth";
 import About from "./components/About/About";
+import Resume from "./pages/Resumebuilder";
 
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
@@ -59,7 +60,7 @@ function App() {
         <Route element={<Layout />}>
           <Route element={<About />} path="/about" />
           <Route
-            path='/'
+            path="/"
             element={
               <>
                 <SectionFirst />
@@ -71,13 +72,14 @@ function App() {
               </>
             }
           />
+
           <Route path='/companies' element={<Companies />} />
           <Route path='/blogs' element={<Carousel />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route
             path={
               user?.user?.accountType === "seeker"
-              ? "/user-profile"
+                ? "/user-profile"
                 : "/user-profile/:id"
             }
             element={<UserProfile />}
@@ -89,13 +91,24 @@ function App() {
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
+<<<<<<< HEAD
         <Route
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}
         />
         <Route path='/*' element={<Error />} />
+=======
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/" element={<Navigate to="/find-jobs" replace={true} />} />
+>>>>>>> c56d5268351cbbabc6763710cb09b1dbd4ec8e88
       </Routes>
-      <BiArrowToTop className="fixed bottom-4 right-4 border rounded-full p-1" size={50} onClick={()=>{window.scrollTo({ top: 0, left: 0, behavior: "smooth"});}}/>
+      <BiArrowToTop
+        className="fixed bottom-4 right-4 border rounded-full p-1"
+        size={50}
+        onClick={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
+      />
       {user && <Footer />}
     </main>
   );
