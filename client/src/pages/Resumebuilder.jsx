@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Resume.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -70,21 +70,31 @@ const Resume = () => {
     ],
   });
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Control") {
-      setIsCtrlDown(true);
-    }
-    if (isCtrlDown && e.key === "p") {
-      e.preventDefault();
-      handlePrint();
-    }
-  };
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Control") {
+        setIsCtrlDown(true);
+      }
+      if (isCtrlDown && e.key === "p") {
+        e.preventDefault();
+        handlePrint();
+      }
+    };
 
-  const handleKeyUp = (e) => {
-    if (e.key === "Control") {
-      setIsCtrlDown(false);
-    }
-  };
+    const handleKeyUp = (e) => {
+      if (e.key === "Control") {
+        setIsCtrlDown(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keyup", handleKeyUp);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [isCtrlDown]);
 
   const handlePrint = () => {
     html2canvas(document.querySelector("article")).then((canvas) => {
@@ -122,8 +132,6 @@ const Resume = () => {
         </div>
       </div>
       <article
-        onKeyDown={handleKeyDown}
-        onKeyUp={handleKeyUp}
         tabIndex="0"
         contentEditable="true"
       >

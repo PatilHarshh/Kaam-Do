@@ -35,7 +35,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-10 mt-16 bg-gradient-to-r from-blue-200 to-purple-200 border border-gray-300 rounded-lg shadow-2xl">
+    <div className="max-w-md mx-auto p-10 mt-16 bg-gradient-to-r from-orange-200 to-yellow-200 border border-gray-300 rounded-lg shadow-2xl">
       <h2 className="text-4xl font-extrabold mb-6 text-center text-gray-900">Contact Us</h2>
       <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in">
         <div className="form-group">
@@ -47,7 +47,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           />
         </div>
         <div className="form-group">
@@ -59,7 +59,7 @@ const ContactForm = () => {
             value={formData.contactNumber}
             onChange={handleChange}
             required
-            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           />
           {errors.contactNumber && <p className="text-red-500 text-sm mt-1">{errors.contactNumber}</p>}
         </div>
@@ -72,7 +72,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           />
         </div>
         <div className="form-group">
@@ -83,13 +83,13 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 resize-none"
+            className="mt-1 p-3 block w-full border border-gray-300 rounded-xl shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 resize-none"
             rows="4"
           />
         </div>
         <button
           type="submit"
-          className="w-full py-3 px-6 bg-gradient-to-r from-pink-500 to-yellow-500 text-white font-semibold rounded-xl shadow-md hover:from-pink-600 hover:to-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:scale-110"
+          className="w-full py-3 px-6 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-xl shadow-md hover:from-orange-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-300 ease-in-out transform hover:scale-110"
         >
           Submit
         </button>
