@@ -91,16 +91,13 @@ function App() {
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
-<<<<<<< HEAD
         <Route
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}
         />
         <Route path='/*' element={<Error />} />
-=======
         <Route path="/resume" element={<Resume />} />
         <Route path="/" element={<Navigate to="/find-jobs" replace={true} />} />
->>>>>>> c56d5268351cbbabc6763710cb09b1dbd4ec8e88
       </Routes>
       <BiArrowToTop
         className="fixed bottom-4 right-4 border rounded-full p-1"
