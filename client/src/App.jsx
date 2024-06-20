@@ -122,7 +122,7 @@ function App() {
         />
         <Route path='/*' element={<Error />} />
 
-       {/* <Route path="*" element={<Navigate to="/find-jobs" replace />} />
+        <Route path="*" element={<Navigate to="/find-jobs" replace />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/" element={<Navigate to="/find-jobs" replace={true} />} />
       </Routes>
