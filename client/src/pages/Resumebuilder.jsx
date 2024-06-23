@@ -5,6 +5,7 @@ import jsPDF from "jspdf";
 
 const Resume = () => {
   const [isCtrlDown, setIsCtrlDown] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
   const [resumeContent, setResumeContent] = useState({
     personalInfo: {
       name: "Luna Thomas",
@@ -98,85 +99,108 @@ const Resume = () => {
   }, [isCtrlDown]);
 
   const handlePrint = () => {
+    const buttons = document.querySelectorAll(".resume-buttons button, .edit-button");
+    buttons.forEach((button) => {
+      button.style.display = "none";
+    });
+
     html2canvas(document.querySelector("article")).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
       pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
       pdf.save("resume.pdf");
+
+      buttons.forEach((button) => {
+        button.style.display = "inline-block";
+      });
     });
   };
 
+
+
+  const toggleEditMode = () => {
+    setIsEditMode(!isEditMode);
+  };
+
   return (
-    <div className="resume-container">
-      <div className="resume" contentEditable="true">
-        <h1>{resumeContent.personalInfo.name}</h1>
-        <h2>{resumeContent.personalInfo.title}</h2>
-        <div className="contact-info">
-          <p>{resumeContent.personalInfo.email} | {resumeContent.personalInfo.phone} | {resumeContent.personalInfo.location} | {resumeContent.personalInfo.linkedin}</p>
-        </div>
-        <hr />
-        <section>
-          <h3>Summary</h3>
-          <p>{resumeContent.summary}</p>
-        </section>
-        <section>
-          <h3>Experience</h3>
-          {resumeContent.experience.map((exp, index) => (
-            <div key={index} className="job">
-              <h4>{exp.position}</h4>
-              <h5>{exp.company} | {exp.years} | {exp.location}</h5>
+    <center>
+
+      <div className="resume-container">
+        <article>
+          <div className="resume" contentEditable={isEditMode}>
+            <button className="edit-button" onClick={toggleEditMode}>
+              {isEditMode ? "Save" : "Edit"}
+            </button>
+            <h1>{resumeContent.personalInfo.name}</h1>
+            <h2>{resumeContent.personalInfo.title}</h2>
+            <div className="contact-info">
+              <p>{resumeContent.personalInfo.email} | {resumeContent.personalInfo.phone} | {resumeContent.personalInfo.location} | {resumeContent.personalInfo.linkedin}</p>
+            </div>
+            <hr />
+            <section>
+              <h3>Summary</h3>
+              <p>{resumeContent.summary}</p>
+            </section>
+            <section>
+              <h3>Experience</h3>
+              {resumeContent.experience.map((exp, index) => (
+                <div key={index} className="job">
+                  <h4>{exp.position}</h4>
+                  <h5>{exp.company} | {exp.years} | {exp.location}</h5>
+                  <ul>
+                    {exp.description.map((desc, i) => (
+                      <li key={i}>{desc}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </section>
+            <section>
+              <h3>Education</h3>
+              <div className="school">
+                <h4>{resumeContent.education.degree1}</h4>
+                <h5>{resumeContent.education.school} | {resumeContent.education.degree1years}</h5>
+              </div>
+              <div className="school">
+                <h4>{resumeContent.education.degree2}</h4>
+                <h5>{resumeContent.education.school} | {resumeContent.education.degree2years}</h5>
+              </div>
+            </section>
+            <section>
+              <h3>Skills</h3>
               <ul>
-                {exp.description.map((desc, i) => (
-                  <li key={i}>{desc}</li>
+                {resumeContent.skills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
                 ))}
               </ul>
+            </section>
+            <section>
+              <h3>Certifications</h3>
+              <ul>
+                {resumeContent.certifications.map((cert, index) => (
+                  <li key={index}>{cert}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h3>Achievements</h3>
+              <ul>
+                {resumeContent.achievements.map((achievement, index) => (
+                  <li key={index}>{achievement}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h3>Languages</h3>
+              <p>{resumeContent.languages.join(' | ')}</p>
+            </section>
+            <div className="resume-buttons">
+              <button onClick={handlePrint}>Download PDF</button>
             </div>
-          ))}
-        </section>
-        <section>
-          <h3>Education</h3>
-          <div className="school">
-            <h4>{resumeContent.education.degree1}</h4>
-            <h5>{resumeContent.education.school} | {resumeContent.education.degree1years}</h5>
           </div>
-          <div className="school">
-            <h4>{resumeContent.education.degree2}</h4>
-            <h5>{resumeContent.education.school} | {resumeContent.education.degree2years}</h5>
-          </div>
-        </section>
-        <section>
-          <h3>Skills</h3>
-          <ul>
-            {resumeContent.skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-        </section>
-        <section>
-          <h3>Certifications</h3>
-          <ul>
-            {resumeContent.certifications.map((cert, index) => (
-              <li key={index}>{cert}</li>
-            ))}
-          </ul>
-        </section>
-        <section>
-          <h3>Achievements</h3>
-          <ul>
-            {resumeContent.achievements.map((achievement, index) => (
-              <li key={index}>{achievement}</li>
-            ))}
-          </ul>
-        </section>
-        <section>
-          <h3>Languages</h3>
-          <p>{resumeContent.languages.join(' | ')}</p>
-        </section>
-        <div className="resume-buttons">
-          <button onClick={handlePrint}>Download PDF</button>
-        </div>
-      </div>
-    </div>
+        </article>
+      </div>    </center>
+
   );
 };
 
