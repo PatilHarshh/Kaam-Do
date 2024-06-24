@@ -13,7 +13,12 @@
 * {
   box-sizing: border-box;
 }
-
+.edit-button{
+background-color: #007bff;
+padding: 5px 20px;
+color: white;
+border-radius: 10px;
+}
 html, body {
   margin: 0;
   padding: 0;

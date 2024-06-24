@@ -100,9 +100,12 @@ const Resume = () => {
 
   const handlePrint = () => {
     const buttons = document.querySelectorAll(".resume-buttons button, .edit-button");
+    const instructions = document.querySelector(".instructions");
+
     buttons.forEach((button) => {
       button.style.display = "none";
     });
+    instructions.style.display = "none";
 
     html2canvas(document.querySelector("article")).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
@@ -113,6 +116,7 @@ const Resume = () => {
       buttons.forEach((button) => {
         button.style.display = "inline-block";
       });
+      instructions.style.display = "block";
     });
   };
 
@@ -129,8 +133,11 @@ const Resume = () => {
         <article>
           <div className="resume" contentEditable={isEditMode}>
             <button className="edit-button" onClick={toggleEditMode}>
-              {isEditMode ? "Save" : "Edit"}
-            </button>
+              {isEditMode ? "Save" : "Edit"} 
+            </button> 
+            <p className="instructions">
+              Instructions: Click on the edit button to modify the resume. Add or remove elements as needed. After making changes, click the save button and then download the resume.
+            </p>
             <h1>{resumeContent.personalInfo.name}</h1>
             <h2>{resumeContent.personalInfo.title}</h2>
             <div className="contact-info">
