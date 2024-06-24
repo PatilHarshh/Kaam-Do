@@ -29,7 +29,7 @@ const SectionSecond = () => {
       title: "Human Resources",
       positions: "1 open position",
       imageUrl:
-        "https://www.zambianguardian.com/wp-content/uploads/2022/09/Types-of-human-resource-development.jpg",
+        "https://images.shiksha.com/mediadata/shikshaOnline/mailers/2021/naukri-learning/oct/28oct/What-is-human-resources.jpg",
     },
     {
       id: 5,
