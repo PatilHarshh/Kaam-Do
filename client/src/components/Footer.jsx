@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
+import React, {useState} from 'react';
 import Feedback from "./Feedback.jsx"
-import TextInput from "./TextInput";
-import CustomButton from "./CustomButton";
+
 
 const Footer = () => {
+  
   const [showModal, setShowModal] = useState(false);
-
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
   return (
