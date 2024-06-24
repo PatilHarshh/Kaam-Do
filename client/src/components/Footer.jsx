@@ -69,6 +69,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div id="google_translate_element" className="absolute bottom-5 right-5"></div>
       </footer>
       <div className="bg-[#EEE6DB] dark:bg-gray-800 py-5 flex justify-center items-center">
         <p className=" text-sm text-center sm:text-left">
