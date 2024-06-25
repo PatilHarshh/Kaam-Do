@@ -25,6 +25,7 @@ import Resume from "./pages/Resumebuilder";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import { BiArrowToTop } from "react-icons/bi";
+import Candidates from "./components/Candidates";
 
 // Layout component to handle protected routes
 function Layout() {
@@ -92,7 +93,7 @@ function App() {
           <Route path='/blogs' element={<Carousel />} />
 
           <Route path="/find-jobs" element={<FindJobs />} />
-
+          <Route path="/candidates" element={<Candidates />} />
           <Route path={
             user?.user?.accountType === "seeker"
               ? "/user-profile"
@@ -116,6 +117,7 @@ function App() {
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
+        <Route path="/candidates" element = {<Candidates />} />
         <Route
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}

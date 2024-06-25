@@ -11,6 +11,10 @@ a {
   text-decoration: inherit;
 }
 
+#root {
+  padding: 20px;
+}
+
 
 /* #18171D #212121 */
 li:hover{
