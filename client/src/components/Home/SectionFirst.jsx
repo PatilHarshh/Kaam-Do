@@ -53,19 +53,19 @@ const SectionFirst = () => {
                             <ListItemIcon>
                                 <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
-                            <ListItemText primary="Wide range of job categories"/>
+                            <ListItemText primary="Wide range of job categories" />
                         </ListItem>
                         <ListItem>
                             <ListItemIcon>
                                 <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
-                            <ListItemText primary="Flexible working hours"/>
+                            <ListItemText primary="Flexible working hours" />
                         </ListItem>
                         <ListItem>
                             <ListItemIcon>
                                 <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
-                            <ListItemText primary="Remote work options"/>
+                            <ListItemText primary="Remote work options" />
                         </ListItem>
                     </List>
                 </Grid>
