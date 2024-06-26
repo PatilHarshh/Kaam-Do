@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { BsStars } from "react-icons/bs";
@@ -32,6 +32,29 @@ const FindJobs = () => {
       setFilterJobTypes([...filterJobTypes, val]);
     }
   };
+
+  const sortJobs = (jobs, criteria) => {
+    return jobs.sort((a, b) => {
+      switch (criteria) {
+        case 'A-Z':
+          return a.company.name.localeCompare(b.company.name);
+        case 'Z-A':
+          return b.company.name.localeCompare(a.company.name);
+        case 'Newest':
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        case 'Oldest':
+          return new Date(a.createdAt) - new Date(b.createdAt);
+        default:
+          return 0;
+      }
+    });
+  };
+
+  useEffect(()=>{
+    const sortedJobs = sortJobs(jobs,sort)
+    console.log(sort)
+    console.log(sortedJobs)
+  },[sort])
 
   const filterExperience = async (e) => {
     setFilterExp(e);
