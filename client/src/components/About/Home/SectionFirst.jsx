@@ -6,6 +6,12 @@ import clsx from 'clsx';
 
 const SectionFirst = () => {
     return (
+        <>
+        <GlobalStyles styles={{
+            '.css-1p823my-MuiListItem-root:hover':{
+                color: 'inherit !important'                 // to disable hovering effect of ListItem
+            }
+        }} />
         <Box sx={{minHeight: '100vh', display: 'flex', paddingTop: '2%' }}
         className={clsx('bg-orange-100', 'dark:bg-slate-800')}>
             <Grid container sx={{ height: '100%' }}>
@@ -71,6 +77,7 @@ const SectionFirst = () => {
                 </Grid>
             </Grid>
         </Box>
+        </>
     );
 };
 
