@@ -6,12 +6,6 @@ import { GlobalStyles } from '@mui/material';
 
 const SectionFirst = () => {
     return (
-        <>
-        <GlobalStyles styles={{
-            '.css-1p823my-MuiListItem-root:hover':{
-                color: 'inherit !important'                 // to disable hovering effect of ListItem 
-            }
-        }} />
         <Box sx={{ backgroundColor: '#eee6db', minHeight: '100vh', display: 'flex', paddingTop: '2%' }}
         className="dark:bg-slate-800"
         >
@@ -78,7 +72,6 @@ const SectionFirst = () => {
                 </Grid>
             </Grid>
         </Box>
-        </>
     );
 };
 
