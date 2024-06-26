@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Grid, Typography, TextField, InputAdornment, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import CheckIcon from '@mui/icons-material/Check';
-import { GlobalStyles } from '@mui/material';
 
 const SectionFirst = () => {
     return (
