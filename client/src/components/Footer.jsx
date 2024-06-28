@@ -5,8 +5,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
+
     <div className="dark:bg-gray-800 dark:text-gray-200">
       <footer className="bg-[#EEE6DB] dark:bg-gray-900 flex flex-col md:flex-row justify-center items-center ">
+
+    <div>
+      <footer className="bg-[#EEE6DB] dark:bg-gray-800 flex flex-col md:flex-row justify-center items-center ">
+
         <div className="container p-10 flex flex-col md:flex-row justify-center items-center">
           <div className="flex flex-col md:flex-row justify-between gap-10">
             {/* Column 1 */}
@@ -70,8 +75,13 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+
       <div className="bg-[#EEE6DB] dark:bg-gray-900 py-5 flex justify-center items-center">
         <p className="text-sm text-center sm:text-left dark:text-gray-400">
+
+      <div className="bg-[#EEE6DB] dark:bg-gray-800 py-5 flex justify-center items-center">
+        <p className=" text-sm text-center sm:text-left">
+
           Copyright&copy; 2024 by Kaam Do. All rights reserved.
         </p>
       </div>
