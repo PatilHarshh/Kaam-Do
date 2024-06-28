@@ -126,7 +126,7 @@ const Navbar = () => {
             <Link to="/resume">Resume Builder</Link>
           </li>
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/candidates">Candidates</Link>
+            <Link to="/">Candidates</Link>
           </li>
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             <Link to="/blogs">Blogs</Link>
@@ -186,7 +186,7 @@ const Navbar = () => {
             Companies
           </Link>
           <Link
-            to="/candidates"
+            to="/"
             onClick={handleCloseNavbar}
             className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
           >
