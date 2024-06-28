@@ -135,8 +135,8 @@ const Resume = () => {
             <button className="edit-button" onClick={toggleEditMode}>
               {isEditMode ? "Save" : "Edit"} 
             </button> 
-            <p className="instructions">
-              Instructions: Click on the edit button to modify the resume. Add or remove elements as needed. After making changes, click the save button and then download the resume.
+            <p className="instructions border p-1 border-dashed border-black mt-3 mb-1">
+             <span className="text-blue-600 font-semibold">Instructions :</span>  Click on the edit button to modify the resume. Add or remove elements as needed. After making changes, click the save button and then download the resume.
             </p>
             <h1>{resumeContent.personalInfo.name}</h1>
             <h2>{resumeContent.personalInfo.title}</h2>
