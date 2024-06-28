@@ -18,6 +18,7 @@ import SectionThird from "./components/Home/SectionThird";
 import SectionFourth from "./components/Home/SectionFourth";
 import SectionFifth from "./components/Home/SectionFifth";
 import SectionSixth from "./components/Home/SectionSixth";
+import Candidates from "./components/Home/Candidates";
 import About from "./components/About/About";
 import ContactForm from "./components/ContactForm"; // Importing ContactForm
 import Resume from "./pages/Resumebuilder";
@@ -25,7 +26,6 @@ import Resume from "./pages/Resumebuilder";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import { BiArrowToTop } from "react-icons/bi";
-import Candidates from "./components/Candidates";
 
 // Layout component to handle protected routes
 function Layout() {
@@ -71,6 +71,7 @@ function App() {
               <SectionFourth />
               <SectionSixth />
               <SectionFifth />
+              <Candidates />
             </>
           } />
           <Route path="/companies" element={<Companies />} />
