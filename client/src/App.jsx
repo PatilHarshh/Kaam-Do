@@ -18,6 +18,7 @@ import SectionThird from "./components/Home/SectionThird";
 import SectionFourth from "./components/Home/SectionFourth";
 import SectionFifth from "./components/Home/SectionFifth";
 import SectionSixth from "./components/Home/SectionSixth";
+import Candidates from "./components/Home/Candidates";
 import About from "./components/About/About";
 import ContactForm from "./components/ContactForm"; // Importing ContactForm
 import Resume from "./pages/Resumebuilder";
@@ -70,6 +71,7 @@ function App() {
               <SectionFourth />
               <SectionSixth />
               <SectionFifth />
+              <Candidates />
             </>
           } />
           <Route path="/companies" element={<Companies />} />
@@ -92,7 +94,7 @@ function App() {
           <Route path='/blogs' element={<Carousel />} />
 
           <Route path="/find-jobs" element={<FindJobs />} />
-
+          <Route path="/candidates" element={<Candidates />} />
           <Route path={
             user?.user?.accountType === "seeker"
               ? "/user-profile"
@@ -116,6 +118,7 @@ function App() {
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
+        <Route path="/candidates" element = {<Candidates />} />
         <Route
           path="/"
           element={<Navigate to="/find-jobs" replace={true} />}
