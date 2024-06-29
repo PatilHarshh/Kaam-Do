@@ -31,6 +31,14 @@ const SectionSixth = () => {
         >
           Subscribe to our newsletter to receive our weekly feed
         </Typography>
+        <Typography
+          variant="body1"
+          align="center"
+          className={clsx("text-gray-500", "dark:text-gray-400")}
+          sx={{ mb: 4, px: { xs: 2, md: 6 } }}
+        >
+          Join our community to get the latest updates on our products, exclusive offers, and insightful articles on a variety of topics. Be the first to know about new features and upcoming events. Our newsletter is a great way to stay connected and informed.
+        </Typography>
         <Grid container spacing={3} alignItems="center" justifyContent="center">
           <Grid
             item
@@ -57,13 +65,21 @@ const SectionSixth = () => {
                 alignItems: "center",
               }}
             >
+              <Typography
+                variant="body2"
+                align="center"
+                className={clsx("text-gray-500", "dark:text-gray-400")}
+                sx={{ mb: 2 }}
+              >
+                Enter your email below to subscribe:
+              </Typography>
               <TextField
                 variant="outlined"
                 placeholder="Enter your email"
                 fullWidth
                 sx={{
-                    borderColor:'lightgrey',
-                    borderRadius: 4
+                  borderColor: "lightgrey",
+                  borderRadius: 4,
                 }}
                 className={clsx("dark:bg-gray-500", "dark:border-gray-600")}
                 InputProps={{
