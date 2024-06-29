@@ -27,27 +27,54 @@ const SectionFirst = () => {
                     <Typography variant="h6" sx={{ color: 'gray', marginTop: 2 }}>
                         Search your career opportunity through 12,000 yours
                     </Typography>
+
                     <Box sx={{ display: 'flex', alignItems: 'center', marginTop: 4 }}>
-                        <TextField
-                            variant="outlined"
-                            placeholder="Search job title"
-                            sx={{ flex: 1, marginRight: 2, '& .MuiOutlinedInput-root': { borderRadius: '20px', background: 'white', color: 'black' } }}
-                        />
-                        <TextField
-                            variant="outlined"
-                            placeholder="Location"
-                            sx={{ flex: 1, '& .MuiOutlinedInput-root': { borderRadius: '20px', background: 'white', color: 'black' }}}
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="end">
-                                        <IconButton sx={{ bgcolor: 'orange', borderRadius: '20px', color: 'white' }}>
-                                            <SearchIcon />
-                                        </IconButton>
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
-                    </Box>
+    <TextField
+        variant="outlined"
+        placeholder="Search job title"
+        sx={{
+            flex: 1,
+            marginRight: 2,
+            '& .MuiOutlinedInput-root': {
+                borderRadius: '20px',
+                background: 'white',
+                color: 'black',
+                cursor: 'pointer'
+            },
+            '& .MuiInputBase-input': {
+                cursor: 'pointer'
+            }
+        }}
+    />
+    <TextField
+        variant="outlined"
+        placeholder="Location"
+        sx={{
+            flex: 1,
+            '& .MuiOutlinedInput-root': {
+                borderRadius: '20px',
+                background: 'white',
+                color: 'black',
+                cursor: 'pointer'
+            },
+            '& .MuiInputBase-input': {
+                cursor: 'pointer'
+            }
+        }}
+        InputProps={{
+            endAdornment: (
+                <InputAdornment position="end">
+                    <IconButton sx={{ bgcolor: 'orange', borderRadius: '20px', color: 'white', cursor: 'pointer' }}>
+                        <SearchIcon />
+                    </IconButton>
+                </InputAdornment>
+            ),
+        }}
+    />
+</Box>
+
+
+
                     <List sx={{ marginTop: 4 }}>
                         <ListItem>
                             <ListItemIcon>

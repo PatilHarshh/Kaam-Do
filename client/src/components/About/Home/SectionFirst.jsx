@@ -31,7 +31,7 @@ const SectionFirst = () => {
                         <TextField
                             variant="outlined"
                             placeholder="Search job title"
-                            sx={{ flex: 1, marginRight: 2, '& .MuiOutlinedInput-root': { borderRadius: '20px', background: 'white', color: 'black' } }}
+                            sx={{ flex: 1, marginRight: 2, cursor:'pointer', '& .MuiOutlinedInput-root': { borderRadius: '20px', background: 'white', color: 'black'} }}
                         />
                         <TextField
                             variant="outlined"
