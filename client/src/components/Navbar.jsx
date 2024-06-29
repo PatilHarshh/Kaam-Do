@@ -149,7 +149,7 @@ const Navbar = () => {
           className="block lg:hidden text-slate-900"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          {isOpen ? <AiOutlineClose size={26} /> : <HiMenuAlt3 size={26} />}
+          {isOpen ? <AiOutlineClose size={26} style={{color:'orange'}}/> : <HiMenuAlt3 size={26} style={{color:'red'}}/>}
         </button>
       </nav>
 
