@@ -5,7 +5,7 @@
     padding: 0;
     height: 0;
   }
-  article{
+  article {
     width: 100%;
   }
 }
@@ -13,18 +13,13 @@
 * {
   box-sizing: border-box;
 }
-.edit-button{
-background-color: #007bff;
-padding: 5px 20px;
-color: white;
-border-radius: 10px;
-}
+
 html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #f3f3f3;
-  color: #333;
+  background: var(--background-color, hsla(0, 0%, 98%, 1));
+  color: var(--text-color, #000);
 }
 
 .resume-container {
@@ -36,7 +31,7 @@ html, body {
 
 .resume {
   width: 800px;
-  background: #fff;
+  background: var(--background-color, hsla(0, 0%, 98%, 1));
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -45,6 +40,7 @@ html, body {
   text-align: center;
   font-size: 36px;
   letter-spacing: 2px;
+  color: var(--text-color, #000);
 }
 
 .resume h2 {
@@ -63,6 +59,7 @@ html, body {
 
 .resume hr {
   margin: 20px 0;
+  border-color: var(--hr-color, #ccc);
 }
 
 section {
@@ -74,11 +71,13 @@ section {
   font-weight: 600;
   margin-bottom: 10px;
   text-transform: uppercase;
+  color: var(--text-color, #000);
 }
 
 .resume p, .resume ul {
   font-size: 14px;
   line-height: 1.6;
+  color: var(--text-color, #000);
 }
 
 .resume ul {
@@ -95,28 +94,18 @@ section {
   content: '•';
   position: absolute;
   left: 0;
-  color: #333;
+  color: var(--text-color, #000);
 }
 
-.resume .job h4 {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.resume .job h5 {
-  font-size: 14px;
-  color: gray;
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-
+.resume .job h4,
 .resume .school h4 {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
+  color: var(--text-color, #000);
 }
 
+.resume .job h5,
 .resume .school h5 {
   font-size: 14px;
   color: gray;
@@ -130,14 +119,34 @@ section {
   margin-top: 20px;
 }
 
-.resume-buttons button {
+.resume-buttons button,
+.edit-button {
   cursor: pointer;
   padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--button-bg, #007bff);
+  color: var(--button-color, #fff);
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
   outline: none;
+}
+
+.edit-button {
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.dark {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --article-background: #1e1e1e;
+  --hr-color: #666;
+  --button-text: #fff;
+  --button-border: #444;
+  --cmpnt-btn-bg: #333;
+  --cmpnt-p-btn-bg: #444;
+  --cmpnt-li-btn-bg: #222;
+  --button-bg: #444;
+  --button-color: #fff;
 }
