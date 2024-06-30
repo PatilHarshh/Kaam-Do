@@ -1,0 +1,29 @@
+.star {
+    transition: transform 0.2s ease-in-out;
+}
+  
+.star:hover {
+transform: scale(1.2);
+}
+
+.custom-shape-divider-top-1718601849 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1718601849 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 79px;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.custom-shape-divider-top-1718601849 .shape-fill {
+    fill: #F39C53;
+}

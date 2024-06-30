@@ -7,11 +7,11 @@ import bodyParser from 'body-parser';
 import xss from'xss-clean';
 import ExpressMongoSanitize from 'express-mongo-sanitize';
 import dbConnection from './dbConfig/dbConnection.js';
+import FeedbackRouter from './routes/router.js';
 
 dotenv.config();
 
 const app = express();
-
 
 const PORT = process.env.PORT || 8800;
 
@@ -29,6 +29,8 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(morgan("dev"));
 
+// Router for feedback
+app.use("/feedback", FeedbackRouter);
 
 // Listen
 app.listen(PORT, ()=>{
