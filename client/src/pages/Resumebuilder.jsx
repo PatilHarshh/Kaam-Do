@@ -5,69 +5,71 @@ import jsPDF from "jspdf";
 
 const Resume = () => {
   const [isCtrlDown, setIsCtrlDown] = useState(false);
-  const [resumeContent] = useState({
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [resumeContent, setResumeContent] = useState({
     personalInfo: {
-      tel: "(000) 000-0000",
-      name: "John Doe",
-      nickname: "JD",
-      email: "johndoe@example.com",
+      name: "Luna Thomas",
+      title: "Product Manager | Strategy & Innovation",
+      email: "luna.thomas@example.com",
+      phone: "555-555-5555",
+      location: "San Francisco, California",
+      linkedin: "linkedin.com/in/lunathomas",
     },
-    workExperience: [
+    summary: "With over 3 years of experience in product management, I have a proven track record of driving product strategy and innovation. My expertise in data integration platforms, user experience, and agile methodologies has been pivotal in delivering successful products.",
+    experience: [
       {
-        company: "XYZ Corporation",
-        position: "Senior Software Engineer",
-        years: "2016 - Present",
-        location: "New York",
-        description:
-          "Leading projects on AI development:\n- Developed an all-seeing AI system\n- Implemented chess-playing AI\nSaved lives and prevented crises:\n- Identified and helped victims\n- Implemented financial aid initiatives\n- Contributed to disaster prevention",
+        position: "Senior Product Manager",
+        company: "ABC Corp",
+        years: "2020 - Present",
+        location: "San Francisco, California",
+        description: [
+          "Led product strategy and execution for data integration platforms, resulting in a 25% increase in customer satisfaction.",
+          "Collaborated with cross-functional teams to launch new features, enhancing user experience and engagement.",
+          "Implemented agile methodologies to streamline product development, reducing time to market by 20%.",
+          "Conducted market research and competitive analysis, leading to a 15% growth in market share.",
+        ],
       },
       {
-        company: "Universal Insurance Group",
-        position: "Insurance Underwriter",
-        years: "2012 - 2016",
-        location: "New York",
-        description:
-          "Investigated insurance claims:\n- Gathered information and provided support to families\nContributed to community welfare:\n- Identified and assisted individuals in need",
+        position: "Product Manager",
+        company: "XYZ Inc.",
+        years: "2018 - 2020",
+        location: "San Francisco, California",
+        description: [
+          "Managed end-to-end product development for a key feature, resulting in a 30% increase in user adoption.",
+          "Worked closely with engineering and design teams to deliver a seamless user experience.",
+          "Developed and maintained product roadmaps, ensuring alignment with business goals.",
+          "Conducted user research and usability testing to inform product decisions.",
+        ],
       },
       {
-        company: "ABC Tech Solutions",
-        position: "Software Engineer",
-        years: "2006 - 2012",
-        location: "New York",
-        description:
-          "Contributed to technological advancements:\n- Played a key role in coding projects\n- Managed projects efficiently\nMaintained secrecy in management:\n- Handled hiring and firing discretely",
+        position: "Associate Product Manager",
+        company: "Tech Solutions",
+        years: "2016 - 2018",
+        location: "San Francisco, California",
+        description: [
+          "Supported senior product managers in the launch of three new products.",
+          "Assisted in the creation of product requirements and specifications.",
+          "Coordinated with marketing and sales teams to ensure successful product launches.",
+          "Conducted data analysis to identify trends and opportunities for product improvement.",
+        ],
       },
     ],
     education: {
-      school: "University",
-      degree: "Computer Science",
-      years: "2002 - 2006",
-      location: "Anytown, USA",
-      highlights: ["Bachelor's Degree"],
+      school: "University of California, Berkeley",
+      degree1: "Master of Business Administration (MBA)",
+      degree1years: "2014 - 2016",
+      degree2: "Bachelor of Science in Computer Science",
+      degree2years: "2010 - 2014",
     },
-    skills: [
-      {
-        category: "Programming",
-        details: [
-          "C/C++, Java, Python",
-          "Experience in building large-scale systems",
-        ],
-      },
-      {
-        category: "Finance",
-        details: [
-          "Knowledgeable in stock market analysis",
-          "Experience in crisis management",
-        ],
-      },
-      {
-        category: "Communication",
-        details: [
-          "Strong interpersonal skills",
-          "Ability to handle diverse situations with compassion",
-        ],
-      },
+    skills: ["Product Management", "Data Integration", "Agile Methodologies", "User Experience"],
+    certifications: ["Certified Scrum Master (CSM)", "Certified Product Manager (CPM)"],
+    achievements: [
+      "Launched Financial Data Platform, leading to a 30% increase in data accuracy.",
+      "Improved Customer Satisfaction by 25% through enhanced user experience.",
+      "Increased Transaction Volumes by 20% with streamlined processes.",
+      "Streamlined Development Process, reducing time to market by 20%.",
     ],
+    languages: ["English", "Spanish", "Mandarin"],
   });
 
   useEffect(() => {
@@ -97,144 +99,115 @@ const Resume = () => {
   }, [isCtrlDown]);
 
   const handlePrint = () => {
+    const buttons = document.querySelectorAll(".resume-buttons button, .edit-button");
+    const instructions = document.querySelector(".instructions");
+
+    buttons.forEach((button) => {
+      button.style.display = "none";
+    });
+    instructions.style.display = "none";
+
     html2canvas(document.querySelector("article")).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
       pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
       pdf.save("resume.pdf");
+
+      buttons.forEach((button) => {
+        button.style.display = "inline-block";
+      });
+      instructions.style.display = "block";
     });
   };
 
+
+
+  const toggleEditMode = () => {
+    setIsEditMode(!isEditMode);
+  };
+
   return (
-    <section
-      className="resume-section"
-      style={{
-        borderRadius: "4px",
-        boxShadow: "gray 1px 1px 3px 2px",
-        overflow: "hidden",
-      }}
-      title="This is a sample resume. Click to edit. You can add/remove any element you like. Press CTRL+P to save as PDF!"
-    >
-      <div className="instructions">
-        <h3>Instructions</h3>
-        <ol>
-          <li>Click on any field to edit the content.</li>
-          <li>You can add or remove any element you like.</li>
-          <li>
-            Press CTRL+P or Download PDF button to save the resume as a PDF
-            file.
-          </li>
-        </ol>
-      </div>
-      <div id="addDropBtn" tabIndex="-1">
-        <div id="dropBtn" onClick={handlePrint}>
-          Download PDF
-        </div>
-      </div>
-      <article
-        tabIndex="0"
-        contentEditable="true"
-      >
-        <table className="psnl-info">
-          <tbody>
-            <tr>
-              <td rowSpan="2" className="text-left">
-                Tel: {resumeContent.personalInfo.tel}
-              </td>
-              <td className="text-center font-20">
-                {resumeContent.personalInfo.name}
-              </td>
-              <td rowSpan="2" className="text-right">
-                email: {resumeContent.personalInfo.email}
-              </td>
-            </tr>
-            <tr>
-              <td className="text-center font-20">
-                {resumeContent.personalInfo.nickname}
-              </td>
-            </tr>
-            <tr>
-              <td colSpan="3" className="text-center font-18">
-                (from <em>Person of Interest</em>)
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        {/* Work Experience */}
-        <div className="rsm-header">
-          <h2>Work Experience</h2>
-          <hr />
-        </div>
-        {resumeContent.workExperience.map((exp, index) => (
-          <div className="rsm-cmpnt" key={index}>
-            <div className="rsm-cmpnt-top">
-              <div className="text-left">
-                <div>{exp.company}</div>
-                <div>{exp.position}</div>
-              </div>
-              <div className="text-right font-10">
-                <div>{exp.years}</div>
-                <div>{exp.location}</div>
-              </div>
+    <center>
+
+      <div className="resume-container">
+        <article>
+          <div className="resume" contentEditable={isEditMode}>
+            <button className="edit-button" onClick={toggleEditMode}>
+              {isEditMode ? "Save" : "Edit"} 
+            </button> 
+            <p className="instructions border p-1 border-dashed border-black mt-3 mb-1">
+             <span className="text-blue-600 font-semibold">Instructions :</span>  Click on the edit button to modify the resume. Add or remove elements as needed. After making changes, click the save button and then download the resume.
+            </p>
+            <h1>{resumeContent.personalInfo.name}</h1>
+            <h2>{resumeContent.personalInfo.title}</h2>
+            <div className="contact-info">
+              <p>{resumeContent.personalInfo.email} | {resumeContent.personalInfo.phone} | {resumeContent.personalInfo.location} | {resumeContent.personalInfo.linkedin}</p>
             </div>
-            <div className="rsm-cmpnt-mid">
-              {exp.description.split("\n").map((line, i) => (
-                <p key={i}>{line}</p>
+            <hr />
+            <section>
+              <h3>Summary</h3>
+              <p>{resumeContent.summary}</p>
+            </section>
+            <section>
+              <h3>Experience</h3>
+              {resumeContent.experience.map((exp, index) => (
+                <div key={index} className="job">
+                  <h4>{exp.position}</h4>
+                  <h5>{exp.company} | {exp.years} | {exp.location}</h5>
+                  <ul>
+                    {exp.description.map((desc, i) => (
+                      <li key={i}>{desc}</li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </div>
-          </div>
-        ))}
-        {/* Education */}
-        <div className="rsm-header">
-          <h2>Education</h2>
-          <hr />
-        </div>
-        <div className="rsm-cmpnt">
-          <div className="rsm-cmpnt-top">
-            <div className="text-left">
-              <div>{resumeContent.education.school}</div>
-              <div>{resumeContent.education.degree}</div>
-            </div>
-            <div className="text-right font-10">
-              <div>{resumeContent.education.years}</div>
-              <div>{resumeContent.education.location}</div>
-            </div>
-          </div>
-          <div className="rsm-cmpnt-btm">
-            <p>Education highlights:</p>
-            <ul>
-              {resumeContent.education.highlights.map((highlight, index) => (
-                <li key={index}>{highlight}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        {/* Skills */}
-        <div className="rsm-header">
-          <h2>Professional Skills</h2>
-          <hr />
-        </div>
-        {resumeContent.skills.map((skill, index) => (
-          <div className="rsm-cmpnt" key={index}>
-            <div className="rsm-cmpnt-top">
-              <div className="text-left">
-                <div>{skill.category}</div>
+            </section>
+            <section>
+              <h3>Education</h3>
+              <div className="school">
+                <h4>{resumeContent.education.degree1}</h4>
+                <h5>{resumeContent.education.school} | {resumeContent.education.degree1years}</h5>
               </div>
-            </div>
-            <div className="rsm-cmpnt-btm">
-              {skill.details.map((detail, i) => (
-                <p key={i}>{detail}</p>
-              ))}
+              <div className="school">
+                <h4>{resumeContent.education.degree2}</h4>
+                <h5>{resumeContent.education.school} | {resumeContent.education.degree2years}</h5>
+              </div>
+            </section>
+            <section>
+              <h3>Skills</h3>
+              <ul>
+                {resumeContent.skills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h3>Certifications</h3>
+              <ul>
+                {resumeContent.certifications.map((cert, index) => (
+                  <li key={index}>{cert}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h3>Achievements</h3>
+              <ul>
+                {resumeContent.achievements.map((achievement, index) => (
+                  <li key={index}>{achievement}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h3>Languages</h3>
+              <p>{resumeContent.languages.join(' | ')}</p>
+            </section>
+            <div className="resume-buttons">
+              <button onClick={handlePrint}>Download PDF</button>
             </div>
           </div>
-        ))}
-      </article>
-      <div className="resume-buttons" tabIndex="-1">
-        <div className="button" onClick={handlePrint}>
-          Download PDF
-        </div>
-      </div>
-    </section>
+        </article>
+      </div>    </center>
+
   );
 };
 
