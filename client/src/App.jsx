@@ -21,10 +21,11 @@ import SectionSixth from "./components/Home/SectionSixth";
 import About from "./components/About/About";
 import ContactForm from "./components/ContactForm"; // Importing ContactForm
 import Resume from "./pages/Resumebuilder";
-
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import { BiArrowToTop } from "react-icons/bi";
+import KaamDoPrivacyPolicy from "./pages/PrivacyPolicy";
+import KaamDoTermsConditions from "./pages/Terms";
 
 // Layout component to handle protected routes
 function Layout() {
@@ -113,6 +114,8 @@ function App() {
           <Route path="/job-detail/:id" element={<JobDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactForm />} /> {/* Route for ContactForm */}
+          <Route path="/privacy" element={<KaamDoPrivacyPolicy />} />
+          <Route path="/terms" element={<KaamDoTermsConditions />} />
         </Route>
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
