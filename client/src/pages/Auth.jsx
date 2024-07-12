@@ -9,11 +9,11 @@ const Auth = () => {
   const [open, setOpen] = useState(true);
   const location = useLocation();
 
-  let from = location?.state?.from?.pathname || "/";
+  // let from = location?.state?.from?.pathname || "/";
 
-  if (user.token) {
-    return window.location.replace(from);
-  }
+  // if (user.token) {
+  //   return window.location.replace(from);
+  // }
   return (
     <div className='w-full '>
       <img src={Office} alt='Office' className='object-contain ' />

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { dispatch } from "./store";
 import { users } from "../utils/data";
 
 const initialState = {
@@ -20,16 +19,14 @@ const userSlice = createSlice({
   },
 });
 
+export const { login, logout } = userSlice.actions;
+
 export default userSlice.reducer;
 
-export function Login(user) {
-  return (dispatch, getState) => {
-    dispatch(userSlice.actions.login(user));
-  };
-}
+export const Login = (user) => (dispatch) => {
+  dispatch(login(user));
+};
 
-export function Logout() {
-  return (dispatch, getState) => {
-    dispatch(userSlice.actions.logout());
-  };
-}
+export const Logout = () => (dispatch) => {
+  dispatch(logout());
+};

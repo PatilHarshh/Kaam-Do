@@ -9,6 +9,7 @@ import JobCard from "./JobCard";
 import Loading from "./Loading";
 import CompanyCard from "./CompanyCard";
 import JobTypes from "./JobTypes";
+import OAuth from "./OAuth";
 
 export {
   Navbar,
@@ -16,6 +17,7 @@ export {
   CustomButton,
   TextInput,
   SignUp,
+  OAuth,
   Header,
   ListBox,
   JobCard,
