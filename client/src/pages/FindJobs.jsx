@@ -26,16 +26,45 @@ const FindJobs = () => {
   const navigate = useNavigate();
 
   const filterJobs = (val) => {
-    if (filterJobTypes?.includes(val)) {
-      setFilterJobTypes(filterJobTypes.filter((el) => el != val));
+    if (filterJobTypes.includes(val)) {
+      setFilterJobTypes(filterJobTypes.filter((el) => el !== val));
     } else {
       setFilterJobTypes([...filterJobTypes, val]);
     }
   };
 
-  const filterExperience = async (e) => {
-    setFilterExp(e);
+  const filterExperience = (val) => {
+    if (filterExp.includes(val)) {
+      setFilterExp(filterExp.filter((el) => el !== val));
+    } else {
+      setFilterExp([...filterExp, val]);
+    }
   };
+
+  const filteredJobs = jobs
+    .filter((job) => {
+      const jobTypeMatch = filterJobTypes.length === 0 || filterJobTypes.includes(job.jobType);
+      const expMatch = filterExp.length === 0 || filterExp.some(exp => exp === job.experience);
+      return jobTypeMatch && expMatch;
+    })
+    .sort((a, b) => {
+      switch (sort) {
+        case "Newest":
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        case "Oldest":
+          return new Date(a.createdAt) - new Date(b.createdAt);
+        case "Salary High to Low":
+          return b.salary - a.salary;
+        case "Salary Low to High":
+          return a.salary - b.salary;
+        case "A-Z":
+          return a.jobTitle.localeCompare(b.jobTitle);
+        case "Z-A":
+          return b.jobTitle.localeCompare(a.jobTitle);
+        default:
+          return 0;
+      }
+    });
 
   return (
     <div>
@@ -51,22 +80,22 @@ const FindJobs = () => {
         `}
       </style>
       <Header
-        title='Find Your Dream Job with Ease'
-        type='home'
-        handleClick={() => { }}
+        title="Find Your Dream Job with Ease"
+        type="home"
+        handleClick={() => {}}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         location={jobLocation}
         setLocation={setJobLocation}
       />
 
-      <div className='container mx-auto flex gap-6 2xl:gap-10 md:px-7 py-0 md:py-6 bg-[#f7fdfd] dark:bg-slate-800'>
-        <div className='hidden md:flex flex-col w-1/5 px-4 py-4  h-fit bg-white dark:bg-slate-900 shadow-sm'>
-          <p className='text-lg font-semibold text-slate-600 dark:text-slate-100'>Filter Search</p>
+      <div className="container mx-auto flex gap-6 2xl:gap-10 md:px-7 py-0 md:py-6 bg-[#f7fdfd] dark:bg-slate-800">
+        <div className="hidden md:flex flex-col w-1/5 px-4 py-4 h-fit bg-white dark:bg-slate-900 shadow-sm">
+          <p className="text-lg font-semibold text-slate-600 dark:text-slate-100">Filter Search</p>
 
-          <div className='py-2'>
-            <div className='flex justify-between mb-3'>
-              <p className='flex items-center gap-2 font-semibold'>
+          <div className="py-2">
+            <div className="flex justify-between mb-3">
+              <p className="flex items-center gap-2 font-semibold">
                 <BiBriefcaseAlt2 />
                 Job Type
               </p>
@@ -76,13 +105,13 @@ const FindJobs = () => {
               </button>
             </div>
 
-            <div className='flex flex-col gap-2'>
+            <div className="flex flex-col gap-2">
               {jobTypes.map((jtype, index) => (
-                <div key={index} className='flex gap-2 text-sm md:text-base '>
+                <div key={index} className="flex gap-2 text-sm md:text-base">
                   <input
-                    type='checkbox'
+                    type="checkbox"
                     value={jtype}
-                    className='w-4 h-4'
+                    className="w-4 h-4"
                     onChange={(e) => filterJobs(e.target.value)}
                   />
                   <span>{jtype}</span>
@@ -91,9 +120,9 @@ const FindJobs = () => {
             </div>
           </div>
 
-          <div className='py-2 mt-4'>
-            <div className='flex justify-between mb-3'>
-              <p className='flex items-center gap-2 font-semibold'>
+          <div className="py-2 mt-4">
+            <div className="flex justify-between mb-3">
+              <p className="flex items-center gap-2 font-semibold">
                 <BsStars />
                 Experience
               </p>
@@ -103,13 +132,13 @@ const FindJobs = () => {
               </button>
             </div>
 
-            <div className='flex flex-col gap-2'>
+            <div className="flex flex-col gap-2">
               {experience.map((exp) => (
-                <div key={exp.title} className='flex gap-3'>
+                <div key={exp.title} className="flex gap-3">
                   <input
-                    type='checkbox'
-                    value={exp?.value}
-                    className='w-4 h-4'
+                    type="checkbox"
+                    value={exp.value}
+                    className="w-4 h-4"
                     onChange={(e) => filterExperience(e.target.value)}
                   />
                   <span>{exp.title}</span>
@@ -119,22 +148,21 @@ const FindJobs = () => {
           </div>
         </div>
 
-        <div className='w-full md:w-5/6 px-5 md:px-0'>
-          <div className='flex items-center justify-between mb-4'>
-            <p className='text-sm md:text-base'>
-              Showing: <span className='font-semibold'>1,902</span> Jobs
-              Available
+        <div className="w-full md:w-5/6 px-5 md:px-0">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-sm md:text-base">
+              Showing: <span className="font-semibold">{filteredJobs.length}</span> Jobs Available
             </p>
 
-            <div className='flex flex-col md:flex-row gap-0 md:gap-2 md:items-center'>
-              <p className='text-sm md:text-base'>Sort By:</p>
+            <div className="flex flex-col md:flex-row gap-0 md:gap-2 md:items-center">
+              <p className="text-sm md:text-base">Sort By:</p>
 
               <ListBox sort={sort} setSort={setSort} />
             </div>
           </div>
 
-          <div className='w-full flex flex-wrap gap-4'>
-            {jobs.map((job, index) => (
+          <div className="w-full flex flex-wrap gap-4">
+            {filteredJobs.map((job, index) => (
               <div className="card-hover" key={index}>
                 <JobCard job={job} />
               </div>
@@ -142,9 +170,9 @@ const FindJobs = () => {
           </div>
 
           {numPage > page && !isFetching && (
-            <div className='w-full flex items-center justify-center pt-16'>
+            <div className="w-full flex items-center justify-center pt-16">
               <CustomButton
-                title='Load More'
+                title="Load More"
                 containerStyles={`text-blue-600 py-1.5 px-5 focus:outline-none hover:bg-blue-700 hover:text-white rounded-full text-base border border-blue-600`}
               />
             </div>
