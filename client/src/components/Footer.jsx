@@ -56,6 +56,9 @@ const Footer = () => {
               <h2 className="font-bold mb-3">Links</h2>
               <ul className="space-y-2">
                 <li><Link to="/find-jobs" className=" hover:text-orange-600">Find Jobs</Link></li>
+                <li><Link to="/privacy" className=" hover:text-orange-600">Privacy Policy</Link></li>
+                <li><Link to="/terms" className=" hover:text-orange-600">Terms and Conditions</Link></li>
+
               </ul>
             </div>
 
