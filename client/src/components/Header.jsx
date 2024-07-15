@@ -4,7 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import CustomButton from "./CustomButton";
 import { popularSearch } from "../utils/data";
 import { HeroImage } from "../assets";
-
+import OAuth from "./OAuth";
 const SearchInput = ({ placeholder, icon, value, setValue, styles }) => {
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -77,6 +77,7 @@ const Header = ({
                 }
               />
             </div>
+            
           </div>
 
           {type && (

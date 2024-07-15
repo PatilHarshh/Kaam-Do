@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
 import { useSelector } from "react-redux";
 import DarkMode from "./DarkMode/DarkMode.jsx";
+import OAuth from "./OAuth.jsx";
 
 function MenuList({ user, onClick }) {
   const handleLogout = () => {};
@@ -145,6 +146,7 @@ const Navbar = () => {
           )}
         </div>
         <DarkMode/>
+        <OAuth/>
         <button
           className="block lg:hidden text-slate-900"
           onClick={() => setIsOpen((prev) => !prev)}
