@@ -7,6 +7,9 @@ export default defineConfig({
   plugins: [
     react(),
   ],
+  define:{
+    'process.env.FIREBASE_KEY':JSON.stringify(process.env.FIREBASE_KEY)
+  },
   build: {
     chunkSizeWarningLimit: 1000, // Increase chunk size warning limit to 1000 kB
     rollupOptions: {
