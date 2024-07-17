@@ -16,28 +16,26 @@ const SectionSecond = () => {
                 Our Mission
               </Typography>
               <Typography variant="body1" paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat,
-                fermentum enim quis, consectetur metus.
+                We understand the job search can be daunting. Between sifting through countless postings and 
+                navigating complex application processes, valuable time gets lost. 
               </Typography>
               <Typography variant="body1" paragraph>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
+                That's why we created Kaam Do! - a streamlined platform 
+                designed to simplify your job search journey.
               </Typography>
               <Typography variant="body1" paragraph>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
+                Our dedicated team is here to bridge the gap between job seekers and employers. 
               </Typography>
               <Typography variant="body1" paragraph>
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
+                We strive to make the entire process efficient and user-friendly, so you can focus on what 
+                truly matters - landing your dream job.
               </Typography>
               <Typography variant="body1" paragraph>
-                Praesent ac lectus euismod, ullamcorper risus vel, hendrerit lectus. Proin non
-                consequat mauris, nec sodales ante.
+                <b>Ready to Take the Next Step?</b>
               </Typography>
               <Typography variant="body1" paragraph>
-                Morbi eu ligula nec lorem maximus aliquam sit amet ac ex. Nulla eu arcu lacinia,
-                ultrices quam eget, tincidunt urna.
+                Sign up for Kaam Do! today and take control of your career. Let us help you 
+                find the perfect job that aligns with your skills and aspirations.
               </Typography>
             </Grid>
 
@@ -47,10 +45,10 @@ const SectionSecond = () => {
                 <Card>
                   <CardContent>
                     <Typography variant="h6" gutterBottom>
-                      Card 1
+                      Find Your Perfect Match
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
-                      Description of Card 1.
+                      Filter jobs by skills, experience, and location to land your dream opportunity.
                     </Typography>
                   </CardContent>
                 </Card>
@@ -59,10 +57,10 @@ const SectionSecond = () => {
                 <Card>
                   <CardContent>
                     <Typography variant="h6" gutterBottom>
-                      Card 2
+                      Build a Winning Resume
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
-                      Description of Card 2.
+                      Craft a professional, ATS-friendly resume in minutes using our innovative builder.
                     </Typography>
                   </CardContent>
                 </Card>
@@ -71,10 +69,10 @@ const SectionSecond = () => {
                 <Card>
                   <CardContent>
                     <Typography variant="h6" gutterBottom>
-                      Card 3
+                      Dedicated Support
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
-                      Description of Card 3.
+                      Our team is here to answer your questions and guide you throughout your job search journey.
                     </Typography>
                   </CardContent>
                 </Card>
