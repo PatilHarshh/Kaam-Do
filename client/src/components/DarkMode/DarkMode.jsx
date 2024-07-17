@@ -23,8 +23,8 @@ function DarkMode() {
   };
     
   return (
-    <div>
-      <button className="dark:bg-white flex items-center justify-center p-1 text-black rounded-xl dark:text-white" onClick={handleThemeSwitch}>
+    <div >
+      <button className="dark:bg-white flex items-center justify-center p-3 text-black rounded-xl dark:text-white" onClick={handleThemeSwitch}>
         {theme === "dark" ? (
           <img src={moonIcon} alt="Moon Icon" className="w-8 h-8" />
         ) : (

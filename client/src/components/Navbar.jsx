@@ -14,8 +14,13 @@ function MenuList({ user, onClick }) {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <div className="flex">
-        <Menu.Button className="flex gap-2 items-center rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-700 dark:text-white hover:bg-gray-100">
+      <div className="flex items-center">
+        <Menu.Button className="flex gap-1 rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-700 dark:text-white hover:bg-gray-100">
+          <img
+            src={user?.profileUrl}
+            alt="user profile"
+            className="w-10 h-10 rounded-full object-cover " 
+          />
           <div className="flex flex-col items-start">
             <p className="text-sm font-semibold">
               {user?.firstName ?? user?.name}
@@ -24,11 +29,6 @@ function MenuList({ user, onClick }) {
               {user?.jobTitle ?? user?.email}
             </span>
           </div>
-          <img
-            src={user?.profileUrl}
-            alt="user profile"
-            className="w-10 h-10 rounded-full object-cover"
-          />
           <BiChevronDown
             className="h-8 w-8 text-slate-600"
             aria-hidden="true"
@@ -44,8 +44,8 @@ function MenuList({ user, onClick }) {
         leave="transition ease-in duration-75"
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg focus:outline-none">
+      >a
+        <Menu.Items className="absolute right-0 mt-1 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg focus:outline-none gap-5">
           <div className="p-1">
             <Menu.Item>
               {({ active }) => (
@@ -103,13 +103,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 w-full bg-[#f9f9f9] dark:bg-slate-800 z-50 shadow-md">
-      <nav className="container mx-auto flex items-center justify-between p-5">
+    <div className="sticky top-0  w-full bg-[#f9f9f9] dark:bg-slate-800 z-50 shadow-md">
+      <nav className="container  lg-flex gap-3 mx-auto flex items-center justify-between p-5 ">
         <Link to="/" className="text-orange-600 font-bold text-xl">
           Kaam<span className="text-[#fb923c]">Do</span>
         </Link>
 
-        <ul className="hidden lg:flex gap-10 text-base text-gray-700 dark:text-white">
+        <ul className="hidden lg:flex gap-8 text-base text-gray-700 dark:text-white">
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             <Link to="/">Home</Link>
           </li>
@@ -131,8 +131,9 @@ const Navbar = () => {
           <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
             <Link to="/blogs">Blogs</Link>
           </li>
-        </ul>
-        <div className="hidden lg:block">
+          </ul>
+
+        <div className="hidden lg:flex gap-8 items-center ml-auto">
           {!user?.token ? (
             <Link to="/user-auth">
               <CustomButton
@@ -144,18 +145,29 @@ const Navbar = () => {
             <MenuList user={user} />
           )}
         </div>
-        <DarkMode/>
+
+        <DarkMode />
+
+
         <button
           className="block lg:hidden text-slate-900"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          {isOpen ? <AiOutlineClose size={26} style={{color:'orange'}}/> : <HiMenuAlt3 size={26} style={{color:'red'}}/>}
+          {isOpen ? (
+            <AiOutlineClose size={26} style={{ color: "orange" }} />
+          ) : (
+            <HiMenuAlt3 size={26} style={{ color: "red" }} />
+          )}
         </button>
+
       </nav>
 
       {/* MOBILE MENU */}
 
-      <div className={`${isOpen ? "block bg-[#f9f9f9] dark:bg-slate-900" : "hidden"} w-full lg:hidden`}>
+      <div
+        className={`${isOpen ? "block bg-[#f9f9f9] dark:bg-slate-900" : "hidden"
+          } w-full lg:hidden`}
+      >
         <div className="container mx-auto flex flex-col pl-8 gap-3 py-5">
           <Link
             to="/"
