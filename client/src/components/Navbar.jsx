@@ -97,7 +97,6 @@ function MenuList({ user, onClick }) {
 const Navbar = () => {
   const user = useSelector((state) => state.user);
   const [isOpen, setIsOpen] = useState(false);
-
   const handleCloseNavbar = () => {
     setIsOpen((prev) => !prev);
   };
@@ -110,28 +109,64 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden lg:flex gap-10 text-base text-gray-700 dark:text-white">
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/">Home</Link>
+          <li className="rounded">
+            <Link
+              to="/"
+              className="block w-full h-full hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+            >
+              Home
+            </Link>
           </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/find-jobs">Find Jobs</Link>
+          <li className="rounded">
+            <Link
+              to="/find-jobs"
+              className="block w-full h-full hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+            >
+              Find Jobs
+            </Link>
           </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/about">About</Link>
+          <li className="rounded">
+            <Link
+              to="/about"
+              className="block w-full h-full hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+            >
+              About
+            </Link>
           </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/companies">Companies</Link>
+          <li className="rounded">
+            <Link
+              to="/companies"
+              className="block w-full h-full hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+            >
+              Companies
+            </Link>
           </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/resume">Resume Builder</Link>
+          <li className="rounded">
+            <Link
+              to="/resume"
+              className="block w-full h-full hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+            >
+              Resume Builder
+            </Link>
           </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/candidates">Candidates</Link>
+          <li className="rounded">
+            <Link
+              to="/candidates"
+              className="block w-full h-full hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+            >
+              Candidates
+            </Link>
           </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/blogs">Blogs</Link>
+          <li className="rounded">
+            <Link
+              to="/blogs"
+              className="block w-full h-full hover:bg-orange-600 hover:text-white px-3 py-2 rounded"
+            >
+              Blogs
+            </Link>
           </li>
         </ul>
+
         <div className="hidden lg:block">
           {!user?.token ? (
             <Link to="/user-auth">
@@ -144,18 +179,26 @@ const Navbar = () => {
             <MenuList user={user} />
           )}
         </div>
-        <DarkMode/>
+        <DarkMode />
         <button
           className="block lg:hidden text-slate-900"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          {isOpen ? <AiOutlineClose size={26} style={{color:'orange'}}/> : <HiMenuAlt3 size={26} style={{color:'red'}}/>}
+          {isOpen ? (
+            <AiOutlineClose size={26} style={{ color: "orange" }} />
+          ) : (
+            <HiMenuAlt3 size={26} style={{ color: "red" }} />
+          )}
         </button>
       </nav>
 
       {/* MOBILE MENU */}
 
-      <div className={`${isOpen ? "block bg-[#f9f9f9] dark:bg-slate-900" : "hidden"} w-full lg:hidden`}>
+      <div
+        className={`${
+          isOpen ? "block bg-[#f9f9f9] dark:bg-slate-900" : "hidden"
+        } w-full lg:hidden`}
+      >
         <div className="container mx-auto flex flex-col pl-8 gap-3 py-5">
           <Link
             to="/"
