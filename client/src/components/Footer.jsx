@@ -4,6 +4,8 @@ import { FiInstagram } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
   return (
     <div>
       <footer className="bg-[#EEE6DB] dark:bg-gray-800 flex flex-col md:flex-row justify-center items-center ">
@@ -72,7 +74,7 @@ const Footer = () => {
       </footer>
       <div className="bg-[#EEE6DB] dark:bg-gray-800 py-5 flex justify-center items-center">
         <p className=" text-sm text-center sm:text-left">
-          Copyright&copy; 2024 by Kaam Do. All rights reserved.
+          Copyright &copy; {year} by Kaam Do. All rights reserved.
         </p>
       </div>
     </div>
