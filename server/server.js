@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 import xss from'xss-clean';
 import ExpressMongoSanitize from 'express-mongo-sanitize';
 import dbConnection from './dbConfig/dbConnection.js';
+import { User } from './models/userModel.js';
 
 dotenv.config();
 
@@ -27,7 +28,33 @@ app.use(ExpressMongoSanitize());
 app.use(express.json({limit:'10mb'}))
 app.use(express.urlencoded({extended: true}));
 
+
+
 app.use(morgan("dev"));
+app.post("/signup" ,async (req,res )=>{
+    const { email, firstName, lastName, password } = req.body;
+
+  //5.creating a User and posting the daat in the database(Mongoose db here)..
+  const user = await User.create({
+    firstName,
+    lastName,
+   
+    email,
+    password,
+  
+  });
+
+
+  if (!user) {
+    throw new error("user not created")
+  }
+
+  
+  return res
+    .status(200)
+    .json({msg: "User Registered successfully !!"});
+})
+
 
 
 // Listen

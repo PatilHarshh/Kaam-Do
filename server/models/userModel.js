@@ -30,3 +30,5 @@ const userSchema = new mongoose.Schema({
         default:"seeker"
     }
 });
+
+export const User = mongoose.model("User" , userSchema);
