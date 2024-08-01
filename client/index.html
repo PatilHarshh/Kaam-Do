@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Job Finder | Find Dream Job</title>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Finder | Find Dream Job</title>
+    <script>
+      window.addEventListener('mouseover', initLandbot, { once: true });
+      window.addEventListener('touchstart', initLandbot, { once: true });
+      var myLandbot;
+      function initLandbot() {
+        if (!myLandbot) {
+          var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+          s.addEventListener('load', function() {
+            var myLandbot = new Landbot.Livechat({
+              configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2570410-5IMLQN9C79BYAUD4/index.json',
+            });
+          });
+          s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+          var x = document.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+      }
+      </script>
 </head>
 
 <body >
@@ -14,3 +32,5 @@
 </body>
 
 </html>
+
+

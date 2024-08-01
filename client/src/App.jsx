@@ -127,12 +127,13 @@ function App() {
         <Route path="/" element={<Navigate to="/find-jobs" replace={true} />} />
       </Routes>
       <BiArrowToTop
-        className="fixed bottom-4 right-4 border rounded-full p-1"
-        size={50}
-        onClick={() => {
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        }}
-      />
+  className="fixed bottom-24 right-4 border   rounded-full p-3 bg-white shadow-lg z-50 cursor-pointer"
+  size={50}
+  onClick={() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }}
+/>
+
       {user && <Footer />}
     </main>
   );
