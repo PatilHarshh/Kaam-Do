@@ -110,27 +110,27 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden lg:flex gap-10 text-base text-gray-700 dark:text-white">
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/find-jobs">Find Jobs</Link>
-          </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/companies">Companies</Link>
-          </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/resume">Resume Builder</Link>
-          </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/candidates">Candidates</Link>
-          </li>
-          <li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
-            <Link to="/blogs">Blogs</Link>
-          </li>
+          <Link to="/"><li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Home
+          </li></Link>
+          <Link to="/find-jobs"><li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Find Jobs
+          </li></Link>
+          <Link to="/about"><li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            About
+          </li></Link>
+          <Link to="/companies"><li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Companies
+          </li></Link>
+          <Link to="/resume"><li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Resume Builder
+          </li></Link>
+          <Link to="/candidates"><li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Candidates
+          </li></Link>
+          <Link to="/blogs"><li className="hover:bg-orange-600 hover:text-white px-3 py-2 rounded">
+            Blogs
+          </li></Link>
         </ul>
         <div className="hidden lg:block">
           {!user?.token ? (
