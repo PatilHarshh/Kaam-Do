@@ -2,9 +2,16 @@ import React from 'react';
 import { Box, Grid, Typography, TextField, InputAdornment, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import CheckIcon from '@mui/icons-material/Check';
+import { GlobalStyles } from '@mui/material';
 
 const SectionFirst = () => {
     return (
+        <>
+        <GlobalStyles styles={{
+            '.css-1p823my-MuiListItem-root:hover':{
+                color: 'inherit !important'                 // to disable hovering effect of ListItem 
+            }
+        }} />
         <Box sx={{ backgroundColor: '#eee6db', minHeight: '100vh', display: 'flex', paddingTop: '2%' }}
         className="dark:bg-slate-800"
         >
@@ -53,24 +60,25 @@ const SectionFirst = () => {
                             <ListItemIcon>
                                 <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
-                            <ListItemText primary="Wide range of job categories" />
+                            <ListItemText primary="Wide range of job categories"/>
                         </ListItem>
                         <ListItem>
                             <ListItemIcon>
                                 <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
-                            <ListItemText primary="Flexible working hours" />
+                            <ListItemText primary="Flexible working hours"/>
                         </ListItem>
                         <ListItem>
                             <ListItemIcon>
                                 <CheckIcon className='dark:text-white'/>
                             </ListItemIcon>
-                            <ListItemText primary="Remote work options" />
+                            <ListItemText primary="Remote work options"/>
                         </ListItem>
                     </List>
                 </Grid>
             </Grid>
         </Box>
+        </>
     );
 };
 
