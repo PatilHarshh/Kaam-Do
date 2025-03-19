@@ -59,27 +59,27 @@ const SignUp = ({ open, setOpen }) => {
                 <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all '>
                   <Dialog.Title
                     as='h3'
-                    className='text-xl font-semibold lwading-6 text-gray-900'
+                    className='text-xl font-semibold leading-6 text-gray-900'
                   >
                     {isRegister ? "Create Account" : "Account Sign In"}
                   </Dialog.Title>
 
                   <div className='w-full flex items-center justify-center py-4 '>
                     <button
-                      className={`flex-1 px-4 py-2 rounded text-sm outline-none ${
+                      className={`flex-1 px-4 py-2 rounded text-sm outline-none transition-colors duration-200 ${
                         accountType === "seeker"
                           ? "bg-[#1d4fd862] text-blue-900 font-semibold"
-                          : "bg-white border border-blue-400"
+                          : "bg-white border border-blue-400 hover:bg-blue-100"
                       }`}
                       onClick={() => setAccountType("seeker")}
                     >
                       User Account
                     </button>
                     <button
-                      className={`flex-1 px-4 py-2 rounded text-sm outline-none ${
+                      className={`flex-1 px-4 py-2 rounded text-sm outline-none transition-colors duration-200 ${
                         accountType !== "seeker"
                           ? "bg-[#1d4fd862] text-blue-900 font-semibold"
-                          : "bg-white border border-blue-400"
+                          : "bg-white border border-blue-400 hover:bg-blue-100"
                       }`}
                       onClick={() => setAccountType("company")}
                     >
@@ -121,7 +121,7 @@ const SignUp = ({ open, setOpen }) => {
                             placeholder={
                               accountType === "seeker"
                                 ? "eg. James"
-                                : "Comapy name"
+                                : "Company name"
                             }
                             type='text'
                             register={register(
@@ -167,7 +167,7 @@ const SignUp = ({ open, setOpen }) => {
                     <div className='w-full flex gap-1 md:gap-2'>
                       <div className={`${isRegister ? "w-1/2" : "w-full"}`}>
                         <TextInput
-                          name='password'
+                          name='Password'
                           label='Password'
                           placeholder='Password'
                           type='password'
@@ -190,8 +190,8 @@ const SignUp = ({ open, setOpen }) => {
                               validate: (value) => {
                                 const { password } = getValues();
 
-                                if (password != value) {
-                                  return "Passwords do no match";
+                                if (password !== value) {
+                                  return "Passwords do not match";
                                 }
                               },
                             })}
@@ -227,9 +227,8 @@ const SignUp = ({ open, setOpen }) => {
                   <div className='mt-4'>
                     <p className='text-sm text-gray-700'>
                       {isRegister
-                        ? "Already has an account?"
-                        : "Do not have an account"}
-
+                        ? "Already have an account?"
+                        : "Do not have an account?"}
                       <span
                         className='text-sm text-blue-600 ml-2 hover:text-blue-700 hover:font-semibold cursor-pointer'
                         onClick={() => setIsRegister((prev) => !prev)}
